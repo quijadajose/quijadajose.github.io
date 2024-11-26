@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#about">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                        </svg>
+                        Sobre mí</a>
+                </li>
+                <li>
+                    <a href="#experience">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                        </svg>
+                        Experiencia</a>
+                </li>
+                <li><a href="#projects">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z" />
+                        </svg>
+                        Proyectos</a></li>
+                <li><a href="#opensource">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        </svg>
+                        Open Source</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1><span>Hola, soy</span>
+                        José Quijada</h1>
+                    <h2>Backend Developer</h2>
+                    <p>
+                        Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos tecnológicos.
+                        Busco aplicar mis conocimientos
+                        en desarrollo de software para entregar productos con código limpio, mantenible y escalable.
+                        Comprometido con las mejores
+                        prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de OWASP.
+
+                    <div class="social-links">
+                        <a target="_blank" href="https://github.com/quijadajose" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/quijadajosed/" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a title="Email" href="mailto:quijadajosed@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a target="_blank"
+                            href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true"
+                            title="CV">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="profile-image">
+                    <img width="300px" src="./public/picture.jpg"
+                        alt="Un hombre joven con camisa a cuadros azul y blanca mirando a la cámara.">
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <h2>Dónde he trabajado</h2>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <h3>Full Stack Developer y Front-end</h3>
+                    <h4>AGENCIA DE VIAJES L&L TOURS</h4>
+                    <p>Trabajé estrechamente con el cliente en el análisis de requerimientos para desarrollar
+                        funcionalidades críticas en la plataforma de reservas (CERVO). Analizamos las necesidades y
+                        seleccionamos en conjunto las tecnologías más adecuadas, lo que permitió un desarrollo escalable
+                        y eficiente. Implementé CI/CD para mejorar los ciclos de entrega y optimicé la seguridad del
+                        sistema siguiendo los lineamientos OWASP.</p>
+                    <div class="tech-badges">
+                        <span>
+                            <img width="16" src="./public/tecnologis/php.svg" alt="php logo">
+                            PHP
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                            Angular
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                            Git
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/Jira.svg" alt="jira logo">
+                            Jira
+                        </span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <h3>Full Stack Developer</h3>
+                    <h4>BIOONIX, SUTTENE</h4>
+                    <p>Desarrollé el sistema de gestión para el Sindicato Único de Trabajadores del
+                        Transporte, desde la fase de análisis hasta la entrega final. Colaboré con el cliente para
+                        entender las necesidades específicas y escoger la tecnología más adecuada, logrando una solución
+                        integral para la gestión de choferes y vehículos.</p>
+                    <div class="tech-badges">
+                        <span>
+                            <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                            Angular
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/Express.png" alt="expressjs logo">
+                            Express</span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/mariadb.webp" alt="java logo">
+                            MariaDB</span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/typescript.png" alt="typescript logo">
+                            TypeScript
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Más información de los proyectos</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>CERVO</h3>
+                        <p>
+                            Desarrollé el frontend, implementando
+                            funcionalidades como búsqueda y reserva de vuelos, hoteles y tours, carrito de compras,
+                            visualización de métricas, administración de
+                            módulos entre otras funcionalidades.</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                                Angular
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/bootstrap.svg" alt="Bootstrap 5 logo">
+                                Bootstrap 5
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                                Git
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/cervo/cervo.jpg" alt="Pagina de inicio de sesion de CERVO"
+                                class="media-preview" />
+                            <video width="360" src="public/cervo/cervo.mp4" class="media-video" autoplay muted loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>SUTTENE</h3>
+                        <p>Sistema de gestión para el transporte público que permite registrar conductores, vehículos,
+                            escanear códigos QR, registrar pagos y generar reportes.</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                                Angular
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/Express.png" alt="expressjs logo">
+                                Express
+                            </span>
+                            <span style="font-size: 0.7rem;">
+                                <img width="16" src="./public/tecnologis/mariadb.webp" alt="mariadb logo">
+                                MariaDB
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="480" src="public/suttene/suttene.jpg"
+                                alt="Pagina de inicio de sesion de SUTTENE" class="media-preview" />
+                            <video width="360" src="public/suttene/suttene.mp4" class="media-video" autoplay muted loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>CERVO Legacy</h3>
+                        <p>Mantenimiento del sistema legacy y desarrollo de nuevas funcionalidades utilizando. Incluyó
+                            la refactorización del código para mejorar la seguridad y la
+                            integración de la API de Amadeus para optimizar la disponibilidad de vuelos.</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/php.svg" alt="php logo">
+                                PHP
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/fileZilla.svg" alt="FileZilla logo">
+                                FTP
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/mysql.svg" alt="mysql logo">
+                                MySQL
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/cervo-legacy/cervo-legacy.jpg"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opensource" class="opensource-section">
+            <h2>Proyectos Open Source en Desarrollo</h2>
+            <div class="opensource-cards">
+                <div class="opensource-card">
+                    <h3>Lenguaje de señas venezolano (LSV) V2</h3>
+                    <p> La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
+                        rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
+                    <div class="tech-badges">
+                        <span>
+                            <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                            Angular
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/nestjs.webp" alt="git logo">
+                            NestJs
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/graphQL.png" alt="graphqL logo">
+                            GraphQL
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/docker.svg" alt="docker logo">
+                            Docker
+                        </span>
+                        <span>
+                            <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                            Git
+                        </span>
+                    </div>
+                    <a href="https://github.com/quijadajose/LSV" class="github-link">
+                        <i class="fab fa-github"></i> <span>Ver en GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="hobby-projects-section">
+            <h2>Hackatones, colaboraciones y más</h2>
+            <div class="project-cards">
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Mathful</h3>
+                        <p>
+                            Con este proyecto participe en la hackaton de midudev, permite resolver problemas
+                            matematicos usando inteligencia artificial.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/Express.png" alt="expressjs logo">
+                                Express
+                            </span>
+                            <span>
+                                <span>
+                                    <img width="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
+                                    Gemini
+                                </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="480" src="public/mathful/mathful.jpg" alt="Pagina mathful"
+                                class="media-preview" />
+                            <video width="360" src="public/mathful/funcionamiento.mp4" class="media-video" autoplay
+                                muted loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Resumidor de Discord</h3>
+                        <p>
+                            Este proyecto permite resumir mensajes de un servidor de Discord utilizando la API
+                            generativa de Google Gemini y la sencillez de JavaScript.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/js.png" alt="JavaScript logo">
+                                JavaScript</span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
+                                Gemini
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/discord/discord.png"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                            <video width="360" src="public/discord/discord.mp4" class="media-video" autoplay muted loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>
+                            YouTube Transcriber
+                        </h3>
+                        <p>
+                            Este proyecto permite descargar videos de
+                            YouTube y transcribir su contenido de audio utilizando el modelo Whisper.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/python.png" alt="python logo">
+
+                                Python</span>
+
+                            <span>
+                                <img width="16" src="./public/tecnologis/docker.svg" alt="docker logo">
+                                Docker
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/youTube-transcriber/youTube-transcriber.png"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                            <video width="360" src="public/youTube-transcriber/2024-11-26 16-54-52.mkv"
+                                class="media-video" autoplay muted loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>
+                            Configuraciones NeoVim
+                        </h3>
+                        <p>
+                            Este repositorio proporciona un paso a paso de como configurar neovim para pareserse al vsc.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="public/tecnologis/bash.svg" alt="git logo">
+                                Bash</span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/neovim/neovim.png"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Piano CLI</h3>
+                        <p>
+                            Este es un experimento que fusiona la música con la terminal. Permite
+                            explorar las notas de una manera única, tocandolas en la consola.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/js.png" alt="JavaScript logo">
+                                JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/electronic-keyboard/electronic-keyboard.png"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                            <video width="360" src="public/electronic-keyboard/electronic-keyboard.mp4"
+                                class="media-video" autoplay loop>
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Biblioteca de recursos</h3>
+                        <p>Colabore en la cracion de una biblioteca de recursos para la comunidad del traductor de
+                            ingenieria donde se pudieran cargar archivos .</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/nestjs.webp" alt="git logo">
+                                NestJs
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/Astro.svg" alt="astro logo">
+                                Astro</span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img width="360" src="public/ETDI/ETDI.jpg" alt="Pagina de inicio de sesion de CERVO"
+                                class="media-preview" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Mi comienzo en la programacion</h2>
+
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Practicas profesionales (CODADI)</h3>
+                        <p>Creé un sistema para automatizar la gestión de datos del personal en el Dpto. de
+                            Planificación de la ADI-711 GUAIAQUERI, optimizando el registro y la generación de reportes.
+                            Este sistema mejora la eficiencia, reduce errores y moderniza la gestión de la información.
+                        </p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/electronwebp.webp" alt="electron logo">
+                                Electron
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/angular.svg" alt="angular logo">
+                                Angular
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/mariadb.webp" alt="java logo">
+                                MariaDB
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/Express.png" alt="expressjs logo">
+                                Express</span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                                Git
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img height="300px" src="public/codadi/codadi.png"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3> Lenguaje de señas venezolano (LSV) V1</h3>
+                        <p>
+                            La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
+                            rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/Java.svg" alt="java logo">
+                                Java
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/JavaFX.png" alt="java logo">
+                                JavaFx
+                            </span>
+                            <span style="font-size: 0.7rem;">
+                                <img width="16" src="./public/tecnologis/mysql.svg" alt="MySQL logo">
+                                MySQL
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                                Git
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img height="300px" src="public/LVS/login-and-register.gif"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Medicom</h3>
+                        <p>Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro
+                            de salud, permitiendo las busqueda y registro de expedientes.</p>
+                        <div class="tech-badges">
+                            <span>
+                                <img width="16" src="./public/tecnologis/Java.svg" alt="java logo">
+                                Java
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/JavaFX.png" alt="java logo">
+                                JavaFx
+                            </span>
+                            <span style="font-size: 0.7rem;">
+                                <img width="16" src="./public/tecnologis/mysql.svg" alt="MySQL logo">
+                                MySQL
+                            </span>
+                            <span>
+                                <img width="16" src="./public/tecnologis/git.svg" alt="git logo">
+                                Git
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-video">
+                        <div class="media-container">
+                            <img height="300px" src="public/medicom/Login.jpeg"
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-container" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <footer>
+        <p>2024 Portafolio promedio de Backend </p>
+    </footer> -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>

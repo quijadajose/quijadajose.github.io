@@ -1,0 +1,278 @@
+:root {
+  --primary-color: #2d3436;
+  --secondary-color: #0984e3;
+  --text-color: #2d3436;
+  --bg-color: #f5f6fa;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --primary-color: #ecf0f1;
+  --secondary-color: #3498db;
+  --text-color: #ecf0f1;
+  --bg-color: #1a1a1a;
+  --card-bg: #2d3436;
+  --header-bg: #2d3436;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.theme-toggle,
+.lang-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+  color: var(--secondary-color);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+main {
+  margin-top: 60px;
+  padding: 2rem;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.about-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.profile-image {
+  flex: 1;
+}
+
+.profile-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+a {
+  text-decoration: none;
+}
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.experience-cards,
+.project-cards,
+.opensource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-card,
+.project-card,
+.opensource-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-badges span {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.project-video {
+  margin-top: 1rem;
+}
+
+.project-video video {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5rem;
+  }
+
+  header {
+    padding: 0 1rem;
+  }
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Ajusta según el tamaño deseado */
+  overflow: hidden;
+}
+
+.media-preview,
+.media-video {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+
+.media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Oculta el video por defecto */
+  pointer-events: none; /* Evita que el video interfiera en hover */
+}
+
+.media-container:hover .media-preview {
+  opacity: 0; /* Oculta la imagen al pasar el cursor */
+}
+
+.media-container:hover .media-video {
+  opacity: 1; /* Muestra el video al pasar el cursor */
+}
+
+.icon {
+  height: 16px;
+  color: var(--text-color);
+}
