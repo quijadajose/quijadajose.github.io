@@ -271,8 +271,3 @@ footer {
 .media-container:hover .media-video {
   opacity: 1; /* Muestra el video al pasar el cursor */
 }
-
-.icon {
-  height: 16px;
-  color: var(--text-color);
-}
