@@ -33,9 +33,6 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Initialize content with saved language
-updateContent(savedLang);
-
 // Intersection Observer for fade-in animations
 const observerOptions = {
   threshold: 0.2
