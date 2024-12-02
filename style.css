@@ -276,3 +276,9 @@ footer {
 .media-container:hover .media-video {
   opacity: 1; /* Muestra el video al pasar el cursor */
 }
+
+.logo {
+  background-color: #f5f6fa; /* Cambia el color según tus necesidades */
+  padding: 0 2px; /* 0 para arriba y abajo, 2px para derecha e izquierda */
+  border-radius: 4px; /* Opcional: para bordes redondeados */
+}
