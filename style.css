@@ -250,7 +250,7 @@ footer {
 .media-container {
   position: relative;
   width: 100%;
-  max-width: 600px; /* Ajusta según el tamaño deseado */
+  max-width: 600px;
   overflow: hidden;
 }
 
@@ -265,20 +265,29 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; /* Oculta el video por defecto */
-  pointer-events: none; /* Evita que el video interfiera en hover */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .media-container:hover .media-preview {
-  opacity: 0; /* Oculta la imagen al pasar el cursor */
+  opacity: 0;
 }
 
 .media-container:hover .media-video {
-  opacity: 1; /* Muestra el video al pasar el cursor */
+  opacity: 1;
 }
 
 .logo {
-  background-color: #f5f6fa; /* Cambia el color según tus necesidades */
-  padding: 0 2px; /* 0 para arriba y abajo, 2px para derecha e izquierda */
-  border-radius: 4px; /* Opcional: para bordes redondeados */
+  background-color: #f5f6fa;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+select {
+  font-size: 1.5em;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
 }

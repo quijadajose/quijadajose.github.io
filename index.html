@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explore the portfolio of José Quijada, a skilled backend developer specializing in web development, programming, and backend technologies.">
-    <meta name="keywords" content="backend, developer, portfolio, web development, programming">
+    <meta name="description" content="" data-i18n="meta_description">
+    <meta name="keywords" content="" data-i18n="meta_keywords">
     <meta name="author" content="José Quijada">
-    <meta property="og:title" content="Backend Developer Portfolio">
-    <meta property="og:description" content="Portfolio showcasing the work of a web developer.">
+    <meta property="og:title" content="" data-i18n="og_title">
+    <meta property="og:description" content="" data-i18n="og_description">
     <meta property="og:image" content="./public/picture.jpg">
-    <title>Backend Developer Portfolio</title>
+    <title data-i18n="page_title">Backend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
         onload="this.rel='stylesheet'">
@@ -27,23 +26,32 @@
                 <li>
                     <a href="#about">
                         <i class="fas fa-user"></i>
-                        Sobre mí</a>
+                        <span data-i18n="nav_about">Sobre mí</span></a>
                 </li>
                 <li>
                     <a href="#experience">
                         <i class="fas fa-book"></i>
-                        Experiencia</a>
+                        <span data-i18n="nav_experience">Experiencia</span></a>
                 </li>
-                <li><a href="#projects">
+                <li>
+                    <a href="#projects">
                         <i class="fas fa-briefcase"></i>
-                        Proyectos</a></li>
-                <li><a href="#opensource">
+                        <span data-i18n="nav_projects">Proyectos</span></a>
+                </li>
+                <li>
+                    <a href="#opensource">
                         <i class="fab fa-github"></i>
-
-                        Open Source</a></li>
+                        <span data-i18n="nav_opensource">Open Source</span></a>
+                </li>
             </ul>
         </nav>
         <div class="header-controls">
+            <select id="language-selector" class="custom-select" aria-label="Select Language">
+                <option value="es">🇪🇸</option>
+                <option value="en">🇺🇸</option>
+                <option value="br">🇧🇷 </option>
+                <option value="ct">🏴󠁥󠁳󠁣󠁴󠁿</option>
+            </select>
             <button class="theme-toggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
             </button>
@@ -57,7 +65,7 @@
                     <h1><span>Hola, soy</span>
                         José Quijada</h1>
                     <h2>Backend Developer</h2>
-                    <p>
+                    <p data-i18n="about_description">
                         Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos tecnológicos.
                         Busco aplicar mis conocimientos
                         en desarrollo de software para entregar productos con código limpio, mantenible y escalable.
@@ -74,9 +82,8 @@
                         <a title="Email" href="mailto:quijadajosed@gmail.com">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a target="_blank"
-                            href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true"
-                            title="CV">
+                              
+                        <a target="_blank" id="cv-link" href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true" title="CV">
                             <i class="fas fa-file-alt"></i>
                         </a>
                     </div>
@@ -92,12 +99,12 @@
         </section>
 
         <section id="experience" class="experience-section">
-            <h2>Dónde he trabajado</h2>
+            <h2 data-i18n="experience_title">Dónde he trabajado</h2>
             <div class="experience-cards">
                 <div class="experience-card">
-                    <h3>Full Stack Developer y Front-end</h3>
-                    <h4>AGENCIA DE VIAJES L&L TOURS</h4>
-                    <p>Trabajé estrechamente con el cliente en el análisis de requerimientos para desarrollar
+                    <h3 data-i18n="experience_1_title">Full Stack Developer y Front-end</h3>
+                    <h4 data-i18n="experience_1_company">AGENCIA DE VIAJES L&L TOURS</h4>
+                    <p data-i18n="experience_1_description">Trabajé estrechamente con el cliente en el análisis de requerimientos para desarrollar
                         funcionalidades críticas en la plataforma de reservas (CERVO). Analizamos las necesidades y
                         seleccionamos en conjunto las tecnologías más adecuadas, lo que permitió un desarrollo escalable
                         y eficiente. Implementé CI/CD para mejorar los ciclos de entrega y optimicé la seguridad del
@@ -122,9 +129,9 @@
                     </div>
                 </div>
                 <div class="experience-card">
-                    <h3>Full Stack Developer</h3>
-                    <h4>BIOONIX, SUTTENE</h4>
-                    <p>Desarrollé el sistema de gestión para el Sindicato Único de Trabajadores del
+                    <h3 data-i18n="experience_2_title">Full Stack Developer</h3>
+                    <h4 data-i18n="experience_2_company">BIOONIX, SUTTENE</h4>
+                    <p data-i18n="experience_2_description">Desarrollé el sistema de gestión para el Sindicato Único de Trabajadores del
                         Transporte, desde la fase de análisis hasta la entrega final. Colaboré con el cliente para
                         entender las necesidades específicas y escoger la tecnología más adecuada, logrando una solución
                         integral para la gestión de choferes y vehículos.</p>
@@ -150,7 +157,7 @@
         </section>
 
         <section id="projects" class="projects-section">
-            <h2>Más información de los proyectos</h2>
+            <h2 data-i18n="projects_title">Más información de los proyectos</h2>
             <div class="project-cards">
                 <div class="project-card">
                     <div class="project-info">
@@ -193,7 +200,7 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3>SUTTENE</h3>
-                        <p>Sistema de gestión para el transporte público que permite registrar conductores, vehículos,
+                        <p data-i18n="project_suttene_description">Sistema de gestión para el transporte público que permite registrar conductores, vehículos,
                             escanear códigos QR, registrar pagos y generar reportes.</p>
                         <div class="tech-badges">
                             <span>
@@ -228,7 +235,7 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3>CERVO Legacy</h3>
-                        <p>Mantenimiento del sistema legacy y desarrollo de nuevas funcionalidades utilizando. Incluyó
+                        <p data-i18n="project_cervo_legacy_description">Mantenimiento del sistema legacy y desarrollo de nuevas funcionalidades utilizando. Incluyó
                             la refactorización del código para mejorar la seguridad y la
                             integración de la API de Amadeus para optimizar la disponibilidad de vuelos.</p>
                         <div class="tech-badges">
@@ -261,11 +268,11 @@
         </section>
 
         <section id="opensource" class="opensource-section">
-            <h2>Proyectos Open Source en Desarrollo</h2>
+            <h2 data-i18n="opensource_title">Proyectos Open Source en Desarrollo</h2>
             <div class="opensource-cards">
                 <div class="opensource-card">
-                    <h3>Lenguaje de señas venezolano (LSV) V2</h3>
-                    <p> La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
+                    <h3 data-i18n="opensource_lsv2_title">Lenguaje de señas venezolano (LSV) V2</h3>
+                    <p data-i18n="opensource_lsv2_description"> La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
                         rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
                     <div class="tech-badges">
                         <span>
@@ -290,20 +297,20 @@
                         </span>
                     </div>
                     <a href="https://github.com/quijadajose/LSV" class="github-link link">
-                        <i class="fab fa-github"></i> <span>Ver en GitHub</span>
+                        <i class="fab fa-github"></i> <span data-i18n="see_on_github">Ver en GitHub</span>
                     </a>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="hobby-projects-section">
-            <h2>Hackatones, colaboraciones y más</h2>
+            <h2 data-i18n="hobbies_title">Hackatones, colaboraciones y más</h2>
             <div class="project-cards">
 
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Mathful</h3>
-                        <p>
+                        <p data-i18n="project_mathful_description">
                             Con este proyecto participe en la hackaton de midudev, permite resolver problemas
                             matematicos usando inteligencia artificial.
                         </p>
@@ -336,8 +343,8 @@
 
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Resumidor de Discord</h3>
-                        <p>
+                        <h3 data-i18n="project_discord_title">Resumidor de Discord</h3>
+                        <p data-i18n="project_discord_description">
                             Este proyecto permite resumir mensajes de un servidor de Discord utilizando la API
                             generativa de Google Gemini y la sencillez de JavaScript.
                         </p>
@@ -371,7 +378,7 @@
                         <h3>
                             YouTube Transcriber
                         </h3>
-                        <p>
+                        <p data-i18n="project_youtube_description">
                             Este proyecto cli que permite descargar videos de
                             YouTube y transcribir su contenido de audio utilizando el modelo Whisper.
                         </p>
@@ -406,7 +413,7 @@
                         <h3>
                             Configuraciones NeoVim
                         </h3>
-                        <p>
+                        <p data-i18n="project_neovim_description">
                             Este repositorio proporciona un paso a paso de como configurar neovim para pareserse al vsc.
                         </p>
                         <div class="tech-badges">
@@ -427,8 +434,8 @@
                 </div>
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Piano CLI</h3>
-                        <p>
+                        <h3 data-i18n="project_piano_title">Piano CLI</h3>
+                        <p data-i18n="project_piano_description">
                             Este es un experimento que fusiona la música con la terminal. Permite
                             explorar las notas de una manera única, tocandolas en la consola.
                         </p>
@@ -451,8 +458,8 @@
                 </div>
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Biblioteca de recursos</h3>
-                        <p>Colabore en la cracion de una biblioteca de recursos para la comunidad del traductor de
+                        <h3 data-i18n="project_etdi_title">Biblioteca de recursos</h3>
+                        <p data-i18n="project_etdi_description">Colabore en la cracion de una biblioteca de recursos para la comunidad del traductor de
                             ingenieria donde se pudieran cargar archivos .</p>
                         <div class="tech-badges">
                             <span>
@@ -475,13 +482,13 @@
         </section>
 
         <section id="projects" class="projects-section">
-            <h2>Mi comienzo en la programacion</h2>
+            <h2 data-i18n="my_beginning_title">Mi comienzo en la programación</h2>
 
             <div class="project-cards">
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Practicas profesionales (CODADI)</h3>
-                        <p>Creé un sistema para automatizar la gestión de datos del personal en el Dpto. de
+                        <h3 data-i18n="project_codadi_title">Practicas profesionales (CODADI)</h3>
+                        <p data-i18n="project_codadi_description">Creé un sistema para automatizar la gestión de datos del personal en el Dpto. de
                             Planificación de la ADI-711 GUAIAQUERI, optimizando el registro y la generación de reportes.
                         </p>
                         <div class="tech-badges">
@@ -520,8 +527,8 @@
                 </div>
                 <div class="project-card">
                     <div class="project-info">
-                        <h3> Lenguaje de señas venezolano (LSV) V1</h3>
-                        <p>
+                        <h3 data-i18n="project_lsv1_title"> Lenguaje de señas venezolano (LSV) V1</h3>
+                        <p data-i18n="project_lsv1_description">
                             La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
                             rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
                         <div class="tech-badges">
@@ -555,8 +562,8 @@
             <div class="project-cards">
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Medicom</h3>
-                        <p>Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro
+                        <h3 data-i18n="project_medicom_title">Medicom</h3>
+                        <p data-i18n="project_medicom_description">Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro
                             de salud, permitiendo las busqueda y registro de expedientes.</p>
                         <div class="tech-badges">
                             <span>
@@ -594,12 +601,12 @@
         </section>
     </main>
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "pj3uwxd9a0");
-</script>
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "pj3uwxd9a0");
+    </script>
     <script src="main.js"></script>
 </body>
 
