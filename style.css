@@ -64,7 +64,15 @@ header {
   display: flex;
   align-items: center;
 }
-
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espacio entre los elementos, opcional */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 nav ul {
   display: flex;
   justify-content: center;
@@ -252,9 +260,6 @@ footer {
     margin: 0.5rem;
   }
 
-  header {
-    padding: 0 1rem;
-  }
 }
 
 .media-container {
