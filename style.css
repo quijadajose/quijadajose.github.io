@@ -52,23 +52,35 @@ header {
   font-size: 1.2rem;
   padding: 0.5rem;
   transition: color 0.3s ease;
-  margin-left: 1rem;
+}
+#language-selector {
+  font-size: 16px;
+  height: 32px;
 }
 
 .theme-toggle:hover,
 .lang-toggle:hover {
   color: var(--secondary-color);
 }
+header {
+  justify-content: center;
+}
 
 .header-controls {
   display: flex;
   align-items: center;
 }
+.header-controls i {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 16px;
+}
 header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* Espacio entre los elementos, opcional */
+  gap: 2rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -78,10 +90,6 @@ nav ul {
   justify-content: center;
   list-style: none;
   padding: 1rem;
-}
-
-nav ul li {
-  margin: 0 1.5rem;
 }
 
 nav ul li a {
@@ -174,8 +182,8 @@ a {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.project-card{
-    display: flex;
+.project-card {
+  display: flex;
   flex-direction: column;
 }
 
@@ -202,9 +210,9 @@ a {
 .project-video {
   margin-top: 1rem;
 }
-.project-info{
+.project-info {
   flex: 1;
-justify-content: space-between;
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
 }
@@ -259,7 +267,6 @@ footer {
   nav ul li {
     margin: 0.5rem;
   }
-
 }
 
 .media-container {
@@ -307,7 +314,6 @@ select {
   background-color: transparent;
 }
 
-
 #consent-banner {
   color: var(--text-color);
   position: fixed;
@@ -316,7 +322,7 @@ select {
   width: 300px;
   background: var(--card-bg);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
   font-family: sans-serif;
@@ -335,4 +341,10 @@ select {
 .accept-tracking {
   color: var(--text-color);
   background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  nav ul li span {
+    display: none;
+  }
 }

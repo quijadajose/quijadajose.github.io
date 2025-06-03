@@ -139,9 +139,10 @@ const clarityScript = () => {
 const storageKey = "clarity-consent";
 
 const showBannerIfNeeded = () => {
-    if (localStorage.getItem(storageKey) !== "accepted") {
+    const consent = localStorage.getItem(storageKey);
+    if (consent === null) {
         document.getElementById("consent-banner").style.display = "block";
-    } else {
+    } else if (consent === "accepted") {
         clarityScript();
     }
 };
@@ -151,5 +152,10 @@ document.getElementById("accept-tracking").addEventListener("click", () => {
     document.getElementById("consent-banner").style.display = "none";
     clarityScript();
 });
+document.getElementById("decline-tracking").addEventListener("click", () => {
+    localStorage.setItem(storageKey, "declined");
+    document.getElementById("consent-banner").style.display = "none";
+});
+
 
 showBannerIfNeeded();
