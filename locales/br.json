@@ -46,5 +46,6 @@
     "project_medicom_title": "Medicom",
     "project_medicom_description": "Medicom é um aplicativo simples que permite otimizar os prontuários médicos em um centro de saúde, permitindo a busca e o registro de prontuários.",
     "consent_banner_text": "Usamos o Microsoft Clarity para analisar o uso do site. Você aceita o rastreamento?",
-    "consent_banner_accept": "Aceitar"
+    "consent_banner_accept": "Aceitar",
+    "consent_banner_decline": "Rejeitar"
 }

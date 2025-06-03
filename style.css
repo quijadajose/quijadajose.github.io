@@ -318,11 +318,16 @@ select {
   z-index: 1000;
 }
 #consent-banner button {
-  background: var(--secondary-color);
+  color: #e74d3c86;
   margin-top: 10px;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   color: var(--card-bg);
+}
+
+.accept-tracking {
+  color: var(--text-color);
+  background: var(--secondary-color);
 }

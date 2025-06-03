@@ -46,5 +46,6 @@
     "project_medicom_title": "Medicom",
     "project_medicom_description": "Medicom és una senzilla aplicació que permet optimitzar els expedients mèdics en un centre de salut, permetent la cerca i el registre d'expedients.",
     "consent_banner_text": "Utilitzem Microsoft Clarity per analitzar l'ús del lloc web. Acceptes el seguiment?",
-    "consent_banner_accept": "Acceptar"
+    "consent_banner_accept": "Acceptar",
+    "consent_banner_decline": "Rebutjar"
 }

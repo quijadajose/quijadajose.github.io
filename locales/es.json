@@ -46,5 +46,6 @@
     "project_medicom_title": "Medicom",
     "project_medicom_description": "Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro de salud, permitiendo las busqueda y registro de expedientes.",
     "consent_banner_text": "Uso Microsoft Clarity para analizar el uso del sitio web. ¿Aceptas el seguimiento?",
-    "consent_banner_accept": "Aceptar"
+    "consent_banner_accept": "Aceptar",
+    "consent_banner_decline": "Rechazar"
 }
