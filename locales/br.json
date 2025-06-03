@@ -43,6 +43,8 @@
     "project_codadi_description": "Criei um sistema para automatizar a gestão de dados do pessoal no Departamento de planejamento da ADI-711 GUAIAQUERI, otimizando o registro e a geração de relatórios.",
     "project_lsv1_title": "Língua de Sinais Venezuelana (LSV) V1",
     "project_lsv1_description": "O aplicativo LVS busca ensinar a língua de sinais venezuelana de uma maneira divertida e rápida, com ênfase nas expressões do estado de Nueva Esparta.",
-     "project_medicom_title": "Medicom",
-    "project_medicom_description": "Medicom é um aplicativo simples que permite otimizar os prontuários médicos em um centro de saúde, permitindo a busca e o registro de prontuários."
+    "project_medicom_title": "Medicom",
+    "project_medicom_description": "Medicom é um aplicativo simples que permite otimizar os prontuários médicos em um centro de saúde, permitindo a busca e o registro de prontuários.",
+    "consent_banner_text": "Usamos o Microsoft Clarity para analisar o uso do site. Você aceita o rastreamento?",
+    "consent_banner_accept": "Aceitar"
 }

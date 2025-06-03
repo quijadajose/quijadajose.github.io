@@ -44,5 +44,7 @@
     "project_lsv1_title": "Lenguaje de señas venezolano (LSV) V1",
     "project_lsv1_description": "La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.",
     "project_medicom_title": "Medicom",
-    "project_medicom_description": "Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro de salud, permitiendo las busqueda y registro de expedientes."
+    "project_medicom_description": "Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro de salud, permitiendo las busqueda y registro de expedientes.",
+    "consent_banner_text": "Uso Microsoft Clarity para analizar el uso del sitio web. ¿Aceptas el seguimiento?",
+    "consent_banner_accept": "Aceptar"
 }

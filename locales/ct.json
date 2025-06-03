@@ -43,6 +43,8 @@
     "project_codadi_description": "Vaig crear un sistema per automatitzar la gestió de dades del personal al Departament de planificació de l'ADI-711 GUAIAQUERI, optimitzant el registre i la generació d'informes.",
     "project_lsv1_title": "Llenguatge de signes veneçolà (LSV) V1",
     "project_lsv1_description": "L'aplicació LVS busca ensenyar el llenguatge de signes veneçolà d'una manera divertida i ràpida, fent èmfasi en les expressions de l'estat Nueva Esparta.",
-      "project_medicom_title": "Medicom",
-    "project_medicom_description": "Medicom és una senzilla aplicació que permet optimitzar els expedients mèdics en un centre de salut, permetent la cerca i el registre d'expedients."
+    "project_medicom_title": "Medicom",
+    "project_medicom_description": "Medicom és una senzilla aplicació que permet optimitzar els expedients mèdics en un centre de salut, permetent la cerca i el registre d'expedients.",
+    "consent_banner_text": "Utilitzem Microsoft Clarity per analitzar l'ús del lloc web. Acceptes el seguiment?",
+    "consent_banner_accept": "Acceptar"
 }

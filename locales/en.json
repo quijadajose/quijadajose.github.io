@@ -44,5 +44,7 @@
     "project_lsv1_title": "Venezuelan Sign Language (LSV) V1",
     "project_lsv1_description": "The LVS application seeks to teach Venezuelan sign language in a fun and fast way, emphasizing the expressions of Nueva Esparta state.",
     "project_medicom_title": "Medicom",
-    "project_medicom_description": "Medicom is a simple application that allows optimizing medical records in a health center, enabling the search and registration of records."
+    "project_medicom_description": "Medicom is a simple application that allows optimizing medical records in a health center, enabling the search and registration of records.",
+    "consent_banner_text": "I use Microsoft Clarity to analyze website usage. Do you accept tracking?",
+    "consent_banner_accept": "Accept"
 }
