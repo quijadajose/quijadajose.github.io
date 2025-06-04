@@ -114,20 +114,25 @@ section {
   padding: 4rem 1rem;
 }
 
-.about-section {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-}
-
 .about-content {
   display: flex;
   gap: 4rem;
   align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
 }
 
 .about-text {
-  flex: 1;
+  flex: 2; /* Ocupa más espacio */
+}
+
+.profile-image {
+  flex: 1; /* Ocupa menos espacio */
+}
+.profile-image img {
+  max-width: 280px;
+  height: auto;
 }
 
 .about-text h1 {
@@ -219,7 +224,6 @@ a {
 
 .project-video video {
   width: 100%;
-  border-radius: 5px;
 }
 
 .github-link {
