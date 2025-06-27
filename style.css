@@ -1,3 +1,8 @@
+select {
+  font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji",
+    sans-serif;
+  font-size: 1.2rem;
+}
 .project-card a,
 .project-card a:visited {
   color: var(--primary-color);
@@ -11,14 +16,13 @@
   width: 16px;
   height: 16px;
   background-color: var(--primary-color);
-  mask-image: url('/public/arrow-up-right-from-square-solid.svg');
+  mask-image: url("/public/arrow-up-right-from-square-solid.svg");
   mask-repeat: no-repeat;
   mask-size: contain;
-  -webkit-mask-image: url('/public/arrow-up-right-from-square-solid.svg');
+  -webkit-mask-image: url("/public/arrow-up-right-from-square-solid.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
 }
-
 
 :root {
   --primary-color: #2d3436;
