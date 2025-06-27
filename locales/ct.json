@@ -34,7 +34,7 @@
     "project_discord_description": "Aquest projecte permet resumir missatges d'un servidor de Discord utilitzant l'API generativa de Google Gemini i la senzillesa de JavaScript.",
     "project_youtube_description": "Aquest projecte cli permet descarregar vídeos de YouTube i transcriure el seu contingut d'àudio utilitzant el model Whisper.",
     "project_neovim_description": "Aquest repositori proporciona un pas a pas de com configurar neovim per a que s'assembli al vsc.",
-    "project_piano_title": "Piano CLI",
+    "project_piano_title": "CLI del teclat electrònic",
     "project_piano_description": "Aquest és un experiment que fusiona la música amb la terminal. Permet explorar les notes d'una manera única, tocant-les a la consola.",
     "project_etdi_title": "Biblioteca de recursos",
     "project_etdi_description": "Vaig col·laborar en la creació d'una biblioteca de recursos per a la comunitat del traductor d'enginyeria on es poguessin carregar arxius.",
