@@ -37,6 +37,8 @@
     "project_piano_title": "Electronic Keyboard",
     "project_piano_description": "This is an experiment that merges music with the terminal. It allows exploring notes in a unique way, playing them in the console.",
     "project_etdi_title": "Resource Library",
+    "project_shortener_title":"Link Shortener",
+    "project_shortener_description": "This project is a link shortener that allows users to manage their URLs easily and securely, using GitHub OAuth authentication and additional protection through HMAC and secure cookies.",
     "project_etdi_description": "I collaborated in the creation of a resource library for the engineering translator community where files could be uploaded.",
     "my_beginning_title": "My start in programming",
     "project_codadi_title": "Professional Internship (CODADI)",

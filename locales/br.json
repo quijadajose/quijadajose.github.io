@@ -38,6 +38,8 @@
     "project_piano_description": "Este é um experimento que mescla música com o terminal. Permite explorar as notas de uma maneira única, tocando-as no console.",
     "project_etdi_title": "Biblioteca de recursos",
     "project_etdi_description": "Colaborei na criação de uma biblioteca de recursos para a comunidade do tradutor de engenharia onde arquivos pudessem ser carregados.",
+    "project_shortener_title":"Encurtador de Links",
+    "project_shortener_description": "Este projeto é um encurtador de links que permite aos usuários gerenciar suas URLs de forma fácil e segura, usando a autenticação OAuth do GitHub e proteção adicional por meio de HMAC e cookies seguros.",
     "my_beginning_title": "Meu começo na programação",
     "project_codadi_title": "Estágio profissional (CODADI)",
     "project_codadi_description": "Criei um sistema para automatizar a gestão de dados do pessoal no Departamento de planejamento da ADI-711 GUAIAQUERI, otimizando o registro e a geração de relatórios.",

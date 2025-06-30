@@ -38,6 +38,8 @@
     "project_piano_description": "Aquest és un experiment que fusiona la música amb la terminal. Permet explorar les notes d'una manera única, tocant-les a la consola.",
     "project_etdi_title": "Biblioteca de recursos",
     "project_etdi_description": "Vaig col·laborar en la creació d'una biblioteca de recursos per a la comunitat del traductor d'enginyeria on es poguessin carregar arxius.",
+    "project_shortener_title":"Escurçador d'enllaços",
+    "project_shortener_description": "Aquest projecte és un escurçador d'enllaços que permet als usuaris gestionar les vostres URLs de manera senzilla i segura, utilitzant autenticació OAuth de GitHub i protecció addicional mitjançant HMAC i cookies segures.",
     "my_beginning_title": "El meu començament a la programació",
     "project_codadi_title": "Pràctiques professionals (CODADI)",
     "project_codadi_description": "Vaig crear un sistema per automatitzar la gestió de dades del personal al Departament de planificació de l'ADI-711 GUAIAQUERI, optimitzant el registre i la generació d'informes.",
