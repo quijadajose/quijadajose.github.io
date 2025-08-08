@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" data-i18n="meta_description">
-    <meta name="keywords" content="" data-i18n="meta_keywords">
+    <meta name="description" content="Portafolio de José Quijada, Backend Developer. Proyectos, experiencia y open source." data-i18n="meta_description">
+    <meta name="keywords" content="José Quijada, backend developer, portfolio, proyectos, software" data-i18n="meta_keywords">
     <meta name="author" content="José Quijada">
-    <meta property="og:title" content="" data-i18n="og_title">
-    <meta property="og:description" content="" data-i18n="og_description">
+    <meta property="og:title" content="Backend Developer Portfolio - José Quijada" data-i18n="og_title">
+    <meta property="og:description" content="Ingeniero de sistemas apasionado por el desarrollo de software limpio y seguro." data-i18n="og_description">
     <meta property="og:image" content="./public/picture.jpg">
+    <meta property="og:type" content="website">
     <title data-i18n="page_title">Backend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
         onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://tests.quijadajosed.workers.dev/" />
@@ -26,22 +28,22 @@
             <ul>
                 <li>
                     <a href="#about">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user" aria-hidden="true"></i>
                         <span data-i18n="nav_about">Sobre mí</span></a>
                 </li>
                 <li>
                     <a href="#experience">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-book" aria-hidden="true"></i>
                         <span data-i18n="nav_experience">Experiencia</span></a>
                 </li>
                 <li>
                     <a href="#projects">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
                         <span data-i18n="nav_projects">Proyectos</span></a>
                 </li>
                 <li>
                     <a href="#opensource">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-github" aria-hidden="true"></i>
                         <span data-i18n="nav_opensource">Open Source</span></a>
                 </li>
                 <li><select id="language-selector" class="custom-select" aria-label="Select Language">
@@ -53,7 +55,7 @@
                 </li>
                 <li>
                     <button class="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
                     </button>
                 </li>
             </ul>
@@ -82,25 +84,25 @@
                         prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de OWASP.
                     </p>
                     <div class="social-links">
-                        <a target="_blank" href="https://github.com/quijadajose" title="GitHub">
-                            <i class="fab fa-github"></i>
+                        <a target="_blank" href="https://github.com/quijadajose" title="GitHub" aria-label="GitHub" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/quijadajosed/" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                        <a target="_blank" href="https://www.linkedin.com/in/quijadajosed/" title="LinkedIn" aria-label="LinkedIn" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
-                        <a title="Email" href="mailto:quijadajosed@gmail.com">
-                            <i class="fas fa-envelope"></i>
+                        <a title="Email" href="mailto:quijadajosed@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
                               
-                        <a target="_blank" id="cv-link" href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true" title="CV">
-                            <i class="fas fa-file-alt"></i>
+                        <a target="_blank" id="cv-link" href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true" title="CV" aria-label="CV" rel="noopener noreferrer">
+                            <i class="fas fa-file-alt" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
                 <div class="profile-image">
                     <picture>
-                        <source height="400" width="300px" srcset="./public/picture.webp" type="image/webp">
-                        <img height="400" width="300px" src="./public/picture.jpg"
+                        <source height="400" width="300" srcset="./public/picture.webp" type="image/webp">
+                        <img height="400" width="300" src="./public/picture.jpg" loading="eager"
                             alt="Un hombre joven con camisa a cuadros azul y blanca mirando a la cámara.">
                     </picture>
                 </div>
@@ -111,8 +113,8 @@
             <h2 data-i18n="experience_title">Dónde he trabajado</h2>
             <div class="experience-cards">
                 <div class="experience-card">
-                    <h3 data-i18n="experience_1_company">AGENCIA DE VIAJES L&L TOURS</h4>
-                    <h4 data-i18n="experience_1_title">Full Stack Developer y Front-end</h3>
+                    <h3 data-i18n="experience_1_company">AGENCIA DE VIAJES L&L TOURS</h3>
+                    <h4 data-i18n="experience_1_title">Full Stack Developer y Front-end</h4>
                     <p data-i18n="experience_1_description">Trabajé estrechamente con el cliente en el análisis de requerimientos para desarrollar
                         funcionalidades críticas en la plataforma de reservas (CERVO). Analizamos las necesidades y
                         seleccionamos en conjunto las tecnologías más adecuadas, lo que permitió un desarrollo escalable
@@ -138,8 +140,8 @@
                     </div>
                 </div>
                 <div class="experience-card">
-                    <h3 data-i18n="experience_2_company">BIOONIX, SUTTENE</h4>
-                    <h4 data-i18n="experience_2_title">Full Stack Developer</h3>
+                    <h3 data-i18n="experience_2_company">BIOONIX, SUTTENE</h3>
+                    <h4 data-i18n="experience_2_title">Full Stack Developer</h4>
                     <p data-i18n="experience_2_description">Desarrollé el sistema de gestión para el Sindicato Único de Trabajadores del
                         Transporte, desde la fase de análisis hasta la entrega final. Colaboré con el cliente para
                         entender las necesidades específicas y escoger la tecnología más adecuada, logrando una solución
@@ -201,11 +203,11 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/cervo/cervo.webp" type="image/webp">
-                                <img height="170" width="360" src="public/cervo/cervo.jpg"
+                                <img height="170" width="360" src="public/cervo/cervo.jpg" loading="lazy"
                                     alt="Pagina de inicio de sesion de CERVO" class="media-preview">
                             </picture>
                             <video height="170" width="360" src="public/cervo/cervo.mp4" class="media-video" autoplay
-                                muted loop>
+                                muted loop preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -238,11 +240,11 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/suttene/suttene.webp" type="image/webp">
-                                <img height="170" width="360" src="public/suttene/suttene.jpg"
+                                <img height="170" width="360" src="public/suttene/suttene.jpg" loading="lazy"
                                     alt="Pagina de inicio de sesion de SUTTENE" class="media-preview">
                             </picture>
                             <video height="170" width="360" src="public/suttene/suttene-short.mp4" class="media-video"
-                                autoplay muted loop>
+                                autoplay muted loop preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -279,8 +281,8 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/cervo-legacy/cervo-legacy.webp" type="image/webp">
-                                <img height="170" width="360" src="public/cervo-legacy/cervo-legacy.jpg"
-                                    alt="Pagina de inicio de sesion de CERVO legacy" class="media-container">
+                                <img height="170" width="360" src="public/cervo-legacy/cervo-legacy.jpg" loading="lazy"
+                                    alt="Pagina de inicio de sesion de CERVO legacy">
                             </picture>
                         </div>
                     </div>
@@ -320,7 +322,7 @@
             </div>
         </section>
 
-        <section id="projects" class="hobby-projects-section">
+        <section id="hobbies" class="hobby-projects-section">
             <h2 data-i18n="hobbies_title">Hackatones, colaboraciones y más</h2>
             <div class="project-cards">
 
@@ -352,11 +354,11 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/mathful/mathful.webp" type="image/webp">
-                                <img height="170" width="360" src="public/mathful/mathful.jpg" alt="Pagina mathful"
+                                <img height="170" width="360" src="public/mathful/mathful.jpg" loading="lazy" alt="Pagina mathful"
                                     class="media-preview">
                             </picture>
                             <video height="170" width="360" src="public/mathful/funcionamiento.mp4" class="media-video"
-                                autoplay muted loop>
+                                autoplay muted loop preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -389,11 +391,11 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/discord/discord.webp" type="image/webp">
-                                <img height="170" width="360" src="public/discord/discord.jpg"
-                                    alt="Resumidor de Discord" class="media-container" />
+                                <img height="170" width="360" src="public/discord/discord.jpg" loading="lazy"
+                                    alt="Resumidor de Discord" class="media-preview" />
                             </picture>
                             <video height="170" width="360" src="public/discord/discord.mp4" class="media-video"
-                                autoplay muted loop>
+                                autoplay muted loop preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -428,11 +430,11 @@
                         <div class="media-container">
                             <picture>
                                 <source srcset="public/youTube-transcriber/youTube-transcriber.webp" type="image/webp">
-                                <img height="171" width="360" src="public/youTube-transcriber/youTube-transcriber.jpg"
-                                    alt="transcriptor de discord" class="media-container" />
+                                <img height="171" width="360" src="public/youTube-transcriber/youTube-transcriber.jpg" loading="lazy"
+                                    alt="transcriptor de discord" class="media-preview" />
                             </picture>
                             <video height="170" width="360" src="public/youTube-transcriber/youTube-transcriber.mp4"
-                                class="media-video" autoplay muted loop>
+                                class="media-video" autoplay muted loop preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -467,8 +469,8 @@
                     <div class="project-video">
                         <div class="media-container">
                             <picture>
-                                <img height="170" width="360" src="public/link-shortener/linkShortener.png"
-                                    alt="Dashboard del acortador de enlaces" class="media-container">
+                                <img height="170" width="360" src="public/link-shortener/linkShortener.png" loading="lazy"
+                                    alt="Dashboard del acortador de enlaces">
                             </picture>
                         </div>
                     </div>
@@ -493,10 +495,10 @@
                     </div>
                     <div class="project-video">
                         <div class="media-container">
-                            <img height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.png"
-                                alt="Piano CLI" class="media-container" />
+                            <img height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.png" loading="lazy"
+                                alt="Piano CLI" class="media-preview" />
                             <video height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.mp4"
-                                class="media-video" muted controls>
+                                class="media-video" muted controls preload="none">
                                 Tu navegador no soporta el elemento video.
                             </video>
                         </div>
@@ -524,8 +526,8 @@
                     </div>
                     <div class="project-video">
                         <div class="media-container">
-                            <img height="170" width="360" src="public/ETDI/ETDI.jpg"
-                                alt="Pagina de inicio de la biblioteca de recursos" class="media-container" />
+                            <img height="170" width="360" src="public/ETDI/ETDI.jpg" loading="lazy"
+                                alt="Pagina de inicio de la biblioteca de recursos" />
                         </div>
                     </div>
                 </div>
@@ -570,8 +572,8 @@
                         <div class="media-container">
                             <picture>
                                 <source width="504" height="281" srcset="public/codadi/codadi.webp" type="image/webp">
-                                <img width="504" height="281" src="public/codadi/codadi.jpg"
-                                    alt="Pagina de inicio de sesion de CODADI" class="media-container">
+                                <img width="504" height="281" src="public/codadi/codadi.jpg" loading="lazy"
+                                    alt="Pagina de inicio de sesion de CODADI">
                             </picture>
                         </div>
                     </div>
@@ -603,8 +605,8 @@
                     </div>
                     <div class="project-video">
                         <div class="media-container">
-                            <img width="432" height="300" src="public/LVS/lvs.webp"
-                                alt="Pagina de inicio de sesion de LVS" class="media-container" />
+                            <img width="432" height="300" src="public/LVS/lvs.webp" loading="lazy"
+                                alt="Pagina de inicio de sesion de LVS" />
                         </div>
                     </div>
                 </div>
@@ -640,8 +642,8 @@
 
                             <picture>
                                 <source srcset="public/medicom/Login.webp" type="image/webp">
-                                <img width="504" height="350" src="public/medicom/Login.jpeg"
-                                    alt="Pagina de inicio de sesion de medicom" class="media-container">
+                                <img width="504" height="350" src="public/medicom/Login.jpeg" loading="lazy"
+                                    alt="Pagina de inicio de sesion de medicom">
                             </picture>
                         </div>
                     </div>

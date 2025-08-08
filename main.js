@@ -1,10 +1,12 @@
-let currentLanguage = localStorage.getItem('language') || 'en';
+let currentLanguage = localStorage.getItem('language') || 'es';
 async function loadTranslations(lang) {
   const cvLink = document.getElementById('cv-link');
-  if(lang == 'es'){
-    cvLink.href = 'https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
-  }else{
-    cvLink.href = 'https://docs.google.com/document/d/1FGrXWu8lO3BEIF0xofKLRwXo0A8osanH/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true'
+  if (cvLink) {
+    if (lang === 'es') {
+      cvLink.href = 'https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
+    } else {
+      cvLink.href = 'https://docs.google.com/document/d/1FGrXWu8lO3BEIF0xofKLRwXo0A8osanH/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
+    }
   }
     try {
         const response = await fetch(`locales/${lang}.json`);
@@ -29,8 +31,8 @@ function applyTranslations(translations) {
         }
     });
 
-    document.querySelectorAll('img').forEach(img => {
-        const altKey = img.getAttribute('alt');
+    document.querySelectorAll('img[data-i18n-alt]').forEach(img => {
+        const altKey = img.getAttribute('data-i18n-alt');
         if (altKey && translations[altKey]) {
             img.alt = translations[altKey];
         }
@@ -108,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetSection.scrollIntoView({
                     behavior: 'smooth'
                 });
+                history.pushState(null, '', targetId);
+                targetSection.setAttribute('tabindex', '-1');
+                targetSection.focus({ preventScroll: true });
             }
         });
     });
@@ -147,15 +152,23 @@ const showBannerIfNeeded = () => {
     }
 };
 
-document.getElementById("accept-tracking").addEventListener("click", () => {
-    localStorage.setItem(storageKey, "accepted");
-    document.getElementById("consent-banner").style.display = "none";
-    clarityScript();
-});
-document.getElementById("decline-tracking").addEventListener("click", () => {
-    localStorage.setItem(storageKey, "declined");
-    document.getElementById("consent-banner").style.display = "none";
-});
+const acceptBtn = document.getElementById("accept-tracking");
+const declineBtn = document.getElementById("decline-tracking");
+if (acceptBtn) {
+  acceptBtn.addEventListener("click", () => {
+      localStorage.setItem(storageKey, "accepted");
+      const banner = document.getElementById("consent-banner");
+      if (banner) banner.style.display = "none";
+      clarityScript();
+  });
+}
+if (declineBtn) {
+  declineBtn.addEventListener("click", () => {
+      localStorage.setItem(storageKey, "declined");
+      const banner = document.getElementById("consent-banner");
+      if (banner) banner.style.display = "none";
+  });
+}
 
 
 showBannerIfNeeded();
