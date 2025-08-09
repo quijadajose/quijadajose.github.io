@@ -8,6 +8,9 @@
     "nav_experience": "Experiència",
     "nav_projects": "Projectes",
     "nav_opensource": "Codi Obert",
+    "nav_blog": "Blog",
+    "blog_title": "Blog tècnic",
+    "blog_intro": "Aquí compartiré experiments, aprenentatges i articles sobre programació i backend.",
     "lang_es": "Espanyol",
     "lang_en": "Anglès",
     "about_greeting": "Hola, sóc",
@@ -49,5 +52,8 @@
     "project_medicom_description": "Medicom és una senzilla aplicació que permet optimitzar els expedients mèdics en un centre de salut, permetent la cerca i el registre d'expedients.",
     "consent_banner_text": "Utilitzem Microsoft Clarity per analitzar l'ús del lloc web. Acceptes el seguiment?",
     "consent_banner_accept": "Acceptar",
-    "consent_banner_decline": "Rebutjar"
+    "consent_banner_decline": "Rebutjar",
+    "blog_filter_label": "Filtrar per tecnologia:",
+    "blog_filter_all": "Totes",
+    "blog_back": "Tornar"
 }

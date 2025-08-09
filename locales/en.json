@@ -8,6 +8,9 @@
     "nav_experience": "Experience",
     "nav_projects": "Projects",
     "nav_opensource": "Open Source",
+    "nav_blog": "Blog",
+    "blog_title": "Tech blog",
+    "blog_intro": "Here I'll share experiments, learnings and articles about programming and backend.",
     "lang_es": "Español",
     "lang_en": "English",
     "about_greeting": "Hi, I'm",
@@ -49,5 +52,8 @@
     "project_medicom_description": "Medicom is a simple application that allows optimizing medical records in a health center, enabling the search and registration of records.",
     "consent_banner_text": "I use Microsoft Clarity to analyze website usage. Do you accept tracking?",
     "consent_banner_accept": "Accept",
-    "consent_banner_decline": "Decline"
+    "consent_banner_decline": "Decline",
+    "blog_filter_label": "Filter by technology:",
+    "blog_filter_all": "All",
+    "blog_back": "Back"
 }

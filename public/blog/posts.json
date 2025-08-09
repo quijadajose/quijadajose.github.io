@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "sso-keycloak-docker",
+    "image": "https://quijadajose.github.io/public/tests.mp4",
+    "technologies": ["Docker", "Keycloak", "NestJS", "Angular", "Spring Boot"],
+    "title": {
+      "es": "SSO con Docker, Keycloak, NestJS, Angular y Spring Boot",
+      "en": "SSO with Docker, Keycloak, NestJS, Angular and Spring Boot"
+    },
+    "description": {
+      "es": "Este repositorio contiene un proyecto de demostración y un tutorial paso a paso para configurar Keycloak como proveedor de identidad (IdP) dentro de un sistema de Single Sign-On (SSO) ",
+      "en": "This repository contains a demo project and a step-by-step tutorial for configuring Keycloak as an Identity Provider (IdP) within a Single Sign-On (SSO) system."
+    },
+    "readmeUrl": {
+      "es": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md",
+      "en": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md"
+    }
+  },
+  {
+    "slug": "nixos-local-https",
+    "image": "public/nixos-local-https.png",
+    "technologies": ["NixOS", "Let's Encrypt", "DuckDNS", "Nginx"],
+    "title": {
+      "es": "HTTPS en Localhost con NixOS, Let's Encrypt y DuckDNS",
+      "en": "HTTPS on Localhost with NixOS, Let's Encrypt, and DuckDNS"
+    },
+    "description": {
+      "es": "Este proyecto demuestra cómo obtener certificados SSL/TLS válidos de Let's Encrypt para dominios de desarrollo en un entorno local (localhost) usando NixOS y Flakes.",
+      "en": "This project demonstrates how to obtain valid SSL/TLS certificates from Let's Encrypt for development domains in a local environment (localhost) using NixOS and Flakes."
+    },
+    "readmeUrl": {
+      "es": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README.md",
+      "en": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README_EN.md"
+    }
+  }
+]
+

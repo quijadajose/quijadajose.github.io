@@ -8,6 +8,9 @@
     "nav_experience": "Experiência",
     "nav_projects": "Projetos",
     "nav_opensource": "Código Aberto",
+    "nav_blog": "Blog",
+    "blog_title": "Blog técnico",
+    "blog_intro": "Aqui vou compartilhar experimentos, aprendizados e artigos sobre programação e backend.",
     "lang_es": "Espanhol",
     "lang_en": "Inglês",
     "about_greeting": "Olá, sou",
@@ -49,5 +52,8 @@
     "project_medicom_description": "Medicom é um aplicativo simples que permite otimizar os prontuários médicos em um centro de saúde, permitindo a busca e o registro de prontuários.",
     "consent_banner_text": "Usamos o Microsoft Clarity para analisar o uso do site. Você aceita o rastreamento?",
     "consent_banner_accept": "Aceitar",
-    "consent_banner_decline": "Rejeitar"
+    "consent_banner_decline": "Rejeitar",
+    "blog_filter_label": "Filtrar por tecnologia:",
+    "blog_filter_all": "Todas",
+    "blog_back": "Voltar"
 }

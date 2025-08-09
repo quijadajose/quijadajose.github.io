@@ -1,3 +1,25 @@
+/* Markdown content styling */
+#post-content {
+  line-height: 1.7;
+}
+#post-content h1, #post-content h2, #post-content h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+#post-content p, #post-content ul, #post-content ol {
+  margin: 0.75rem 0;
+}
+#post-content pre {
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+}
+#post-content code {
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
 select {
   font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji",
     sans-serif;
@@ -254,6 +276,9 @@ a {
 .project-video {
   margin-top: 1rem;
 }
+.project-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
 .project-info {
   flex: 1;
   justify-content: space-between;
@@ -261,8 +286,11 @@ a {
   flex-direction: column;
 }
 
-.project-video video {
+#blog-detail video {
   width: 100%;
+}
+#blog-detail img {
+  max-width: 100%;
 }
 
 .github-link {
@@ -401,4 +429,14 @@ select {
   nav ul li span {
     display: none;
   }
+}
+
+#blog-detail button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
 }

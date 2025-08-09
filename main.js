@@ -45,7 +45,7 @@ function applyTranslations(translations) {
     document.querySelector('title').textContent = translations.page_title || '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
     const languageSelector = document.getElementById('language-selector');
     if (languageSelector) {
         languageSelector.value = currentLanguage;
@@ -103,16 +103,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) { // Check if the section exists
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                history.pushState(null, '', targetId);
-                targetSection.setAttribute('tabindex', '-1');
-                targetSection.focus({ preventScroll: true });
+            const rawHref = this.getAttribute('href') || '';
+            if (rawHref.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(rawHref);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, '', rawHref);
+                    targetSection.setAttribute('tabindex', '-1');
+                    targetSection.focus({ preventScroll: true });
+                }
+                return;
+            }
+            try {
+                const targetUrl = new URL(this.href);
+                const here = new URL(location.href);
+                const isIndexTarget = /(?:^|\/)index\.html$/i.test(targetUrl.pathname) || targetUrl.pathname === '/';
+                const isHereIndex = /(?:^|\/)index\.html$/i.test(here.pathname) || here.pathname === '/';
+                if (isIndexTarget && isHereIndex && targetUrl.hash) {
+                    const targetSection = document.querySelector(targetUrl.hash);
+                    if (targetSection) {
+                        e.preventDefault();
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, '', targetUrl.hash);
+                        targetSection.setAttribute('tabindex', '-1');
+                        targetSection.focus({ preventScroll: true });
+                    }
+                }
+            } catch (_) {
+                console.log('Error processing link:', this.href);
             }
         });
     });
@@ -132,7 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 const clarityScript = () => {
     (function (c, l, a, r, i, t, y) {
         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -171,4 +196,5 @@ if (declineBtn) {
 }
 
 
+showBannerIfNeeded();
 showBannerIfNeeded();

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog técnico de José Quijada: posts sobre programación, backend y experiencias."
+    data-i18n="meta_description" />
+  <meta name="keywords" content="blog, programación, backend, experiencias, tutoriales" data-i18n="meta_keywords" />
+  <meta name="author" content="José Quijada" />
+  <meta property="og:title" content="Blog técnico - José Quijada" data-i18n="og_title" />
+  <meta property="og:description" content="Artículos técnicos y experiencias de programación."
+    data-i18n="og_description" />
+  <meta property="og:image" content="./public/picture.jpg" />
+  <meta property="og:type" content="website" />
+  <title data-i18n="page_title">Blog - José Quijada</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+    onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </noscript>
+</head>
+
+<body>
+  <style>
+    a {
+      display: inline-flex;
+      align-items: center;      
+      text-decoration: none;
+      color: var(--secondary-color);
+    }
+  </style>
+
+<header></header>
+  <main>
+    <section class="projects-section" id="blog-index">
+      <h1 data-i18n="blog_title">Blog técnico</h1>
+      <p data-i18n="blog_intro">Aquí compartiré experimentos, aprendizajes y artículos sobre programación y backend.</p>
+      <!-- 
+      Proximamente --Solo en cines-- se agregara un filtro por tecnología 
+      <div style="margin: 1rem 0; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center;">
+        <label for="tech-filter" data-i18n="blog_filter_label">Filtrar por tecnología:</label>
+        <select id="tech-filter">
+          <option value="" data-i18n="blog_filter_all">Todas</option>
+        </select>
+      </div> -->
+      <div class="project-cards" id="blog-list"></div>
+    </section>
+    <section class="projects-section" id="blog-detail" style="display:none">
+      <button id="back-to-list" class="accept-tracking" style="margin-bottom:1rem" data-i18n="blog_back">Volver</button>
+      <article id="post-article">
+        <h1 id="post-title"></h1>
+        <div id="post-content"></div>
+      </article>
+    </section>
+  </main>
+  <div id="consent-banner" style="display:none"></div>
+  <script type="module">
+    import { loadLayout } from './components/components.js';
+    await loadLayout();
+    const mainModule = await import('./main.js');
+
+    const state = {
+      posts: [],
+      filtered: [],
+      techs: new Set(),
+      current: null,
+    };
+
+    const currentLang = localStorage.getItem('language') || 'es';
+
+    async function fetchPosts() {
+      const res = await fetch('public/blog/posts.json', { cache: 'no-cache' });
+      state.posts = await res.json();
+      state.filtered = state.posts;
+      state.techs = new Set(state.posts.flatMap(p => p.technologies));
+      renderFilter();
+      renderList();
+
+      const url = new URL(location.href);
+      const slug = url.searchParams.get('post');
+      if (slug) {
+        const post = state.posts.find(p => p.slug === slug);
+        if (post) showDetail(post);
+      }
+    }
+
+    function renderFilter() {
+      const select = document.getElementById('tech-filter');
+      if (!select) return;
+
+      [...select.options].slice(1).forEach(() => select.remove(1));
+      [...state.techs].sort().forEach(tech => {
+        const opt = document.createElement('option');
+        opt.value = tech;
+        opt.textContent = tech;
+        select.appendChild(opt);
+      });
+      select.addEventListener('change', () => {
+        const val = select.value;
+        state.filtered = val ? state.posts.filter(p => p.technologies.includes(val)) : state.posts;
+        renderList();
+      });
+    }
+
+    function renderList() {
+      const list = document.getElementById('blog-list');
+      list.innerHTML = '';
+      state.filtered.forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        const isVideo = typeof post.image === 'string' && /(\.mp4|\.webm|\.ogg)(\?.*)?$/i.test(post.image);
+        const mediaHtml = isVideo
+          ? `<video src="${post.image}" class="media-preview" style="opacity:1" muted playsinline loop preload="metadata"></video>`
+          : `<img src="${post.image}" alt="${post.title[currentLang] || post.title.en || post.title.es}" loading="lazy" class="media-preview" />`;
+        card.innerHTML = `
+          <div class="project-info">
+            <h3>${post.title[currentLang] || post.title.en || post.title.es}</h3>
+            <p>${post.description[currentLang] || post.description.en || post.description.es}</p>
+            <div class="tech-badges">${post.technologies.map(t => `<span>${t}</span>`).join('')}</div>
+          </div>
+          <div class="project-video">
+            <div class="media-container">
+              ${mediaHtml}
+            </div>
+          </div>`;
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => showDetail(post));
+
+        if (isVideo) {
+          const container = card.querySelector('.media-container');
+          const videoEl = container.querySelector('video');
+          if (videoEl) {
+            container.addEventListener('mouseenter', () => {
+              try { videoEl.play(); } catch {}
+            });
+            container.addEventListener('mouseleave', () => {
+              try { videoEl.pause(); } catch {}
+              try { videoEl.currentTime = 0; } catch {}
+            });
+          }
+        }
+        list.appendChild(card);
+      });
+    }
+
+    const loadScript = (src) => new Promise((resolve, reject) => {
+      const el = document.createElement('script');
+      el.src = src;
+      el.async = true;
+      el.onload = resolve;
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+
+    let hlInitPromise;
+    async function ensureHighlightLoaded() {
+      if (window.hljs) return;
+      if (!hlInitPromise) {
+        const base = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build';
+        hlInitPromise = (async () => {
+          await loadScript(`${base}/highlight.min.js`);
+          await Promise.all([
+            loadScript(`${base}/languages/javascript.min.js`),
+            loadScript(`${base}/languages/typescript.min.js`),
+            loadScript(`${base}/languages/json.min.js`),
+            loadScript(`${base}/languages/bash.min.js`),
+            loadScript(`${base}/languages/shell.min.js`),
+            loadScript(`${base}/languages/dockerfile.min.js`),
+            loadScript(`${base}/languages/java.min.js`)
+          ]);
+        })();
+      }
+      return hlInitPromise;
+    }
+
+    async function showDetail(post) {
+      state.current = post;
+      const idx = document.getElementById('blog-index');
+      const det = document.getElementById('blog-detail');
+      const titleEl = document.getElementById('post-title');
+      const contentEl = document.getElementById('post-content');
+      idx.style.display = 'none';
+      det.style.display = 'block';
+      history.replaceState(null, '', `?post=${encodeURIComponent(post.slug)}`);
+
+      const langForReadme = ['es', 'en'].includes(currentLang) ? currentLang : 'en';
+      const url = post.readmeUrl[langForReadme] || post.readmeUrl.en || post.readmeUrl.es;
+      const baseDirUrl = url.slice(0, url.lastIndexOf('/') + 1);
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('README fetch error');
+        const md = await res.text();
+        const { marked } = await import('https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.esm.js');
+        await ensureHighlightLoaded();
+        marked.setOptions({
+          baseUrl: baseDirUrl,
+          highlight: (code, lang) => {
+            try {
+              if (lang && window.hljs.getLanguage(lang)) {
+                return window.hljs.highlight(code, { language: lang }).value;
+              }
+            } catch { }
+            return window.hljs.highlightAuto(code).value;
+          }
+        });
+        contentEl.innerHTML = marked.parse(md);
+        const absolutize = (u) => {
+          try { return new URL(u, baseDirUrl).href; } catch { return u; }
+        };
+        contentEl.querySelectorAll('img').forEach(img => {
+          const s = img.getAttribute('src') || '';
+          if (s && !/^([a-z]+:)?\/\//i.test(s) && !s.startsWith('data:')) {
+            img.src = absolutize(s);
+          }
+          img.loading = 'lazy';
+        });
+        contentEl.querySelectorAll('a').forEach(a => {
+          const h = a.getAttribute('href') || '';
+          if (!h || h.startsWith('#') || h.startsWith('mailto:')) return;
+          if (!/^([a-z]+:)?\/\//i.test(h)) {
+            a.href = absolutize(h);
+          }
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        });
+      } catch (e) {
+        console.log(e);
+        contentEl.textContent = 'No se pudo cargar el contenido.';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById('back-to-list').addEventListener('click', () => {
+      const idx = document.getElementById('blog-index');
+      const det = document.getElementById('blog-detail');
+      det.style.display = 'none';
+      idx.style.display = 'block';
+      history.replaceState(null, '', location.pathname);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    fetchPosts();
+  </script>
+</body>
+
+</html>

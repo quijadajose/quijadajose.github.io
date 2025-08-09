@@ -8,6 +8,9 @@
     "nav_experience": "Experiencia",
     "nav_projects": "Proyectos",
     "nav_opensource": "Open Source",
+    "nav_blog": "Blog",
+    "blog_title": "Blog técnico",
+    "blog_intro": "Aquí compartiré experimentos, aprendizajes y artículos sobre programación y backend.",
     "lang_es": "Español",
     "lang_en": "English",
     "about_greeting": "Hola, soy",
@@ -49,4 +52,8 @@
     "consent_banner_text": "Uso Microsoft Clarity para analizar el uso del sitio web. ¿Aceptas el seguimiento?",
     "consent_banner_accept": "Aceptar",
     "consent_banner_decline": "Rechazar"
+    ,
+    "blog_filter_label": "Filtrar por tecnología:",
+    "blog_filter_all": "Todas",
+    "blog_back": "Volver"
 }
