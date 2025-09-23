@@ -44,8 +44,6 @@
     "project_shortener_title":"Encurtador de Links",
     "project_shortener_description": "Este projeto é um encurtador de links que permite aos usuários gerenciar suas URLs de forma fácil e segura, usando a autenticação OAuth do GitHub e proteção adicional por meio de HMAC e cookies seguros.",
     "my_beginning_title": "Meu começo na programação",
-    "project_codadi_title": "Estágio profissional (CODADI)",
-    "project_codadi_description": "Criei um sistema para automatizar a gestão de dados do pessoal no Departamento de planejamento da ADI-711 GUAIAQUERI, otimizando o registro e a geração de relatórios.",
     "project_lsv1_title": "Língua de Sinais Venezuelana (LSV) V1",
     "project_lsv1_description": "O aplicativo LVS busca ensinar a língua de sinais venezuelana de uma maneira divertida e rápida, com ênfase nas expressões do estado de Nueva Esparta.",
     "project_medicom_title": "Medicom",

@@ -44,8 +44,6 @@
     "project_shortener_description": "This project is a link shortener that allows users to manage their URLs easily and securely, using GitHub OAuth authentication and additional protection through HMAC and secure cookies.",
     "project_etdi_description": "I collaborated in the creation of a resource library for the engineering translator community where files could be uploaded.",
     "my_beginning_title": "My start in programming",
-    "project_codadi_title": "Professional Internship (CODADI)",
-    "project_codadi_description": "I created a system to automate the management of personnel data in the Planning Department of ADI-711 GUAIAQUERI, optimizing registration and report generation.",
     "project_lsv1_title": "Venezuelan Sign Language (LSV) V1",
     "project_lsv1_description": "The LVS application seeks to teach Venezuelan sign language in a fun and fast way, emphasizing the expressions of Nueva Esparta state.",
     "project_medicom_title": "Medicom",

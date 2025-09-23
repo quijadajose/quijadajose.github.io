@@ -44,8 +44,6 @@
     "project_shortener_title":"Escurçador d'enllaços",
     "project_shortener_description": "Aquest projecte és un escurçador d'enllaços que permet als usuaris gestionar les vostres URLs de manera senzilla i segura, utilitzant autenticació OAuth de GitHub i protecció addicional mitjançant HMAC i cookies segures.",
     "my_beginning_title": "El meu començament a la programació",
-    "project_codadi_title": "Pràctiques professionals (CODADI)",
-    "project_codadi_description": "Vaig crear un sistema per automatitzar la gestió de dades del personal al Departament de planificació de l'ADI-711 GUAIAQUERI, optimitzant el registre i la generació d'informes.",
     "project_lsv1_title": "Llenguatge de signes veneçolà (LSV) V1",
     "project_lsv1_description": "L'aplicació LVS busca ensenyar el llenguatge de signes veneçolà d'una manera divertida i ràpida, fent èmfasi en les expressions de l'estat Nueva Esparta.",
     "project_medicom_title": "Medicom",
