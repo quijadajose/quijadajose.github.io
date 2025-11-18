@@ -1,13 +1,13 @@
 let currentLanguage = localStorage.getItem('language') || 'es';
 async function loadTranslations(lang) {
-  const cvLink = document.getElementById('cv-link');
-  if (cvLink) {
-    if (lang === 'es') {
-      cvLink.href = 'https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
-    } else {
-      cvLink.href = 'https://docs.google.com/document/d/1FGrXWu8lO3BEIF0xofKLRwXo0A8osanH/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
+    const cvLink = document.getElementById('cv-link');
+    if (cvLink) {
+        if (lang === 'es') {
+            cvLink.href = 'https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
+        } else {
+            cvLink.href = 'https://docs.google.com/document/d/1FGrXWu8lO3BEIF0xofKLRwXo0A8osanH/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true';
+        }
     }
-  }
     try {
         const response = await fetch(`locales/${lang}.json`);
         if (!response.ok) {
@@ -53,7 +53,7 @@ function initApp() {
             loadTranslations(event.target.value);
         });
     }
-    loadTranslations(currentLanguage); 
+    loadTranslations(currentLanguage);
     const themeToggle = document.querySelector('.theme-toggle');
     const htmlElement = document.documentElement;
 
@@ -77,7 +77,7 @@ function initApp() {
         if (themeToggle) {
             const icon = themeToggle.querySelector('i');
             if (icon) {
-              icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; //Correct class
+                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; //Correct class
             }
         }
     }
@@ -154,9 +154,9 @@ function initApp() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initApp);
+    document.addEventListener('DOMContentLoaded', initApp);
 } else {
-  initApp();
+    initApp();
 }
 const clarityScript = () => {
     (function (c, l, a, r, i, t, y) {
@@ -180,21 +180,20 @@ const showBannerIfNeeded = () => {
 const acceptBtn = document.getElementById("accept-tracking");
 const declineBtn = document.getElementById("decline-tracking");
 if (acceptBtn) {
-  acceptBtn.addEventListener("click", () => {
-      localStorage.setItem(storageKey, "accepted");
-      const banner = document.getElementById("consent-banner");
-      if (banner) banner.style.display = "none";
-      clarityScript();
-  });
+    acceptBtn.addEventListener("click", () => {
+        localStorage.setItem(storageKey, "accepted");
+        const banner = document.getElementById("consent-banner");
+        if (banner) banner.style.display = "none";
+        clarityScript();
+    });
 }
 if (declineBtn) {
-  declineBtn.addEventListener("click", () => {
-      localStorage.setItem(storageKey, "declined");
-      const banner = document.getElementById("consent-banner");
-      if (banner) banner.style.display = "none";
-  });
+    declineBtn.addEventListener("click", () => {
+        localStorage.setItem(storageKey, "declined");
+        const banner = document.getElementById("consent-banner");
+        if (banner) banner.style.display = "none";
+    });
 }
 
 
-showBannerIfNeeded();
 showBannerIfNeeded();

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quijadajose.github.io/sitemap.xml
