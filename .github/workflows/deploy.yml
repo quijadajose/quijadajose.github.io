@@ -32,8 +32,19 @@ jobs:
       - name: Minify CSS
         run: find . -type f -name "*.css" -not -path '*/.git/*' -exec csso {} --output {} \;
 
+      - name: Debug - List JS files
+        run: |
+          echo "Listing all JS files found:"
+          find . -type f -name "*.js" -not -path '*/.git/*'
+
       - name: Minify JS
-        run: find . -type f -name "*.js" -not -path '*/.git/*' -exec terser {} --compress --mangle --output {} \;
+        run: find . -type f -name "*.js" -not -path '*/.git/*' -exec terser {} --module --compress --mangle --output {} \;
+
+      - name: Verify JS Minification
+        run: |
+          echo "Checking components/components.js size and content snippet:"
+          ls -l components/components.js
+          head -n 3 components/components.js
 
       - name: Debug - List HTML files
         run: |
