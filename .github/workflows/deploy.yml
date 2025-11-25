@@ -35,8 +35,19 @@ jobs:
       - name: Minify JS
         run: find . -type f -name "*.js" -not -path '*/.git/*' -exec terser {} --compress --mangle --output {} \;
 
+      - name: Debug - List HTML files
+        run: |
+          echo "Listing all HTML files found:"
+          find . -type f -name "*.html" -not -path '*/.git/*'
+
       - name: Minify HTML
         run: find . -type f -name "*.html" -not -path '*/.git/*' -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true --output {} {} \;
+
+      - name: Verify Components Minification
+        run: |
+          echo "Checking components/header.html size and content snippet:"
+          ls -l components/header.html
+          head -n 3 components/header.html
 
       - name: Minify JSON
         run: |
