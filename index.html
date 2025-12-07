@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <canvas id="matrix-bg"></canvas>
     <header>
         <nav>
             <ul>
@@ -80,40 +81,48 @@
                         </span>
                         José Quijada
                     </h1>
-                    <h2>Backend Developer</h2>
-                    <p data-i18n="about_description">
-                        Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos tecnológicos.
-                        Busco aplicar mis conocimientos
-                        en desarrollo de software para entregar productos con código limpio, mantenible y escalable.
-                        Comprometido con las mejores
-                        prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de OWASP.
-                    </p>
-                    <div class="social-links">
-                        <a target="_blank" href="https://github.com/quijadajose" title="GitHub" aria-label="GitHub"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/quijadajosed/" title="LinkedIn"
-                            aria-label="LinkedIn" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a title="Email" href="mailto:quijadajosed@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </a>
 
-                        <a target="_blank" id="cv-link"
-                            href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true"
-                            title="CV" aria-label="CV" rel="noopener noreferrer">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
-                        </a>
+                    <div class="about-body">
+                        <div class="about-info">
+                            <h2>Backend Developer</h2>
+                            <p data-i18n="about_description">
+                                Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos
+                                tecnológicos.
+                                Busco aplicar mis conocimientos
+                                en desarrollo de software para entregar productos con código limpio, mantenible y
+                                escalable.
+                                Comprometido con las mejores
+                                prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de
+                                OWASP.
+                            </p>
+                            <div class="social-links">
+                                <a target="_blank" href="https://github.com/quijadajose" title="GitHub"
+                                    aria-label="GitHub" rel="noopener noreferrer">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/in/quijadajosed/" title="LinkedIn"
+                                    aria-label="LinkedIn" rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a title="Email" href="mailto:quijadajosed@gmail.com" aria-label="Email">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </a>
+
+                                <a target="_blank" id="cv-link"
+                                    href="https://docs.google.com/document/d/1fF-VH7AlA1MCnMFJ4XN9DSWjT2AGjMzX/edit?usp=sharing&ouid=117283505667745184554&rtpof=true&sd=true"
+                                    title="CV" aria-label="CV" rel="noopener noreferrer">
+                                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="profile-image">
+                            <picture>
+                                <source height="400" width="300" srcset="./public/picture.webp" type="image/webp">
+                                <img height="400" width="300" src="./public/picture.jpg" loading="eager"
+                                    alt="Un hombre joven con camisa a cuadros azul y blanca mirando a la cámara.">
+                            </picture>
+                        </div>
                     </div>
-                </div>
-                <div class="profile-image">
-                    <picture>
-                        <source height="400" width="300" srcset="./public/picture.webp" type="image/webp">
-                        <img height="400" width="300" src="./public/picture.jpg" loading="eager"
-                            alt="Un hombre joven con camisa a cuadros azul y blanca mirando a la cámara.">
-                    </picture>
                 </div>
             </div>
         </section>
@@ -210,18 +219,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/cervo/cervo.webp" type="image/webp">
-                                <img height="170" width="360" src="public/cervo/cervo.jpg" loading="lazy"
-                                    alt="Pagina de inicio de sesion de CERVO" class="media-preview">
-                            </picture>
-                            <video height="170" width="360" src="public/cervo/cervo.mp4" class="media-video" autoplay
-                                muted loop preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/cervo/cervo.mp4">
+                        <picture>
+                            <source srcset="public/cervo/cervo.webp" type="image/webp">
+                            <img height="170" width="360" src="public/cervo/cervo.jpg" loading="lazy"
+                                alt="Pagina de inicio de sesion de CERVO" class="media-preview">
+                        </picture>
                     </div>
                 </div>
                 <div class="project-card">
@@ -248,18 +251,12 @@
 
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/suttene/suttene.webp" type="image/webp">
-                                <img height="170" width="360" src="public/suttene/suttene.jpg" loading="lazy"
-                                    alt="Pagina de inicio de sesion de SUTTENE" class="media-preview">
-                            </picture>
-                            <video height="170" width="360" src="public/suttene/suttene-short.mp4" class="media-video"
-                                autoplay muted loop preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/suttene/suttene-short.mp4">
+                        <picture>
+                            <source srcset="public/suttene/suttene.webp" type="image/webp">
+                            <img height="170" width="360" src="public/suttene/suttene.jpg" loading="lazy"
+                                alt="Pagina de inicio de sesion de SUTTENE" class="media-preview">
+                        </picture>
                     </div>
                 </div>
                 <div class="project-card">
@@ -290,14 +287,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/cervo-legacy/cervo-legacy.webp" type="image/webp">
-                                <img height="170" width="360" src="public/cervo-legacy/cervo-legacy.jpg" loading="lazy"
-                                    alt="Pagina de inicio de sesion de CERVO legacy">
-                            </picture>
-                        </div>
+                    <div class="media-container">
+                        <picture>
+                            <source srcset="public/cervo-legacy/cervo-legacy.webp" type="image/webp">
+                            <img height="170" width="360" src="public/cervo-legacy/cervo-legacy.jpg" loading="lazy"
+                                alt="Pagina de inicio de sesion de CERVO legacy">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -356,26 +351,20 @@
                             <span>
                                 <img class="logo" width="16" height="16" src="./public/tecnologis/expressjs.svg"
                                     alt="express js logo">
-                                Express</span>
+                                Express
+                            </span>
                             <span>
-                                <span>
-                                    <img width="16" height="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
-                                    Gemini
-                                </span>
+                                <img width="16" height="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
+                                Gemini
+                            </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/mathful/mathful.webp" type="image/webp">
-                                <img height="170" width="360" src="public/mathful/mathful.jpg" loading="lazy"
-                                    alt="Pagina mathful" class="media-preview">
-                            </picture>
-                            <video height="170" width="360" src="public/mathful/funcionamiento.mp4" class="media-video"
-                                autoplay muted loop preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/mathful/funcionamiento.mp4">
+                        <picture>
+                            <source srcset="public/mathful/mathful.webp" type="image/webp">
+                            <img height="170" width="360" src="public/mathful/mathful.jpg" loading="lazy"
+                                alt="Pagina mathful" class="media-preview">
+                        </picture>
                     </div>
                 </div>
 
@@ -402,18 +391,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/discord/discord.webp" type="image/webp">
-                                <img height="170" width="360" src="public/discord/discord.jpg" loading="lazy"
-                                    alt="Resumidor de Discord" class="media-preview" />
-                            </picture>
-                            <video height="170" width="360" src="public/discord/discord.mp4" class="media-video"
-                                autoplay muted loop preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/discord/discord.mp4">
+                        <picture>
+                            <source srcset="public/discord/discord.webp" type="image/webp">
+                            <img height="170" width="360" src="public/discord/discord.jpg" loading="lazy"
+                                alt="Resumidor de Discord" class="media-preview" />
+                        </picture>
                     </div>
                 </div>
 
@@ -442,18 +425,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <source srcset="public/youTube-transcriber/youTube-transcriber.webp" type="image/webp">
-                                <img height="171" width="360" src="public/youTube-transcriber/youTube-transcriber.jpg"
-                                    loading="lazy" alt="transcriptor de discord" class="media-preview" />
-                            </picture>
-                            <video height="170" width="360" src="public/youTube-transcriber/youTube-transcriber.mp4"
-                                class="media-video" autoplay muted loop preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/youTube-transcriber/youTube-transcriber.mp4">
+                        <picture>
+                            <source srcset="public/youTube-transcriber/youTube-transcriber.webp" type="image/webp">
+                            <img height="171" width="360" src="public/youTube-transcriber/youTube-transcriber.jpg"
+                                loading="lazy" alt="transcriptor de discord" class="media-preview" />
+                        </picture>
                     </div>
                 </div>
                 <div class="project-card">
@@ -487,13 +464,11 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <picture>
-                                <img height="170" width="360" src="public/link-shortener/linkShortener.png"
-                                    loading="lazy" alt="Dashboard del acortador de enlaces">
-                            </picture>
-                        </div>
+                    <div class="media-container">
+                        <picture>
+                            <img height="170" width="360" src="public/link-shortener/linkShortener.png" loading="lazy"
+                                alt="Dashboard del acortador de enlaces">
+                        </picture>
                     </div>
                 </div>
                 <div class="project-card">
@@ -515,15 +490,9 @@
                                 JavaScript</span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <img height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.png"
-                                loading="lazy" alt="Piano CLI" class="media-preview" />
-                            <video height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.mp4"
-                                class="media-video" muted controls preload="none">
-                                Tu navegador no soporta el elemento video.
-                            </video>
-                        </div>
+                    <div class="media-container" data-video-src="public/electronic-keyboard/electronic-keyboard.mp4">
+                        <img height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.png"
+                            loading="lazy" alt="Piano CLI" class="media-preview" />
                     </div>
                 </div>
                 <div class="project-card">
@@ -547,17 +516,15 @@
                                 Astro</span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <img height="170" width="360" src="public/ETDI/ETDI.jpg" loading="lazy"
-                                alt="Pagina de inicio de la biblioteca de recursos" />
-                        </div>
+                    <div class="media-container">
+                        <img height="170" width="360" src="public/ETDI/ETDI.jpg" loading="lazy"
+                            alt="Pagina de inicio de la biblioteca de recursos" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="projects-section">
+        <section id="beginnings" class="projects-section">
             <h2 data-i18n="my_beginning_title">Mi comienzo en la programación</h2>
 
             <div class="project-cards">
@@ -586,11 +553,9 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
-                            <img width="432" height="300" src="public/LVS/lvs.webp" loading="lazy"
-                                alt="Pagina de inicio de sesion de LVS" />
-                        </div>
+                    <div class="media-container">
+                        <img width="432" height="300" src="public/LVS/lvs.webp" loading="lazy"
+                            alt="Pagina de inicio de sesion de LVS" />
                     </div>
                 </div>
                 <div class="project-card">
@@ -618,21 +583,29 @@
                             </span>
                         </div>
                     </div>
-                    <div class="project-video">
-                        <div class="media-container">
+                    <div class="media-container">
 
-                            <picture>
-                                <source srcset="public/medicom/Login.webp" type="image/webp">
-                                <img width="504" height="350" src="public/medicom/Login.jpeg" loading="lazy"
-                                    alt="Pagina de inicio de sesion de medicom">
-                            </picture>
-                        </div>
+                        <picture>
+                            <source srcset="public/medicom/Login.webp" type="image/webp">
+                            <img width="504" height="350" src="public/medicom/Login.jpeg" loading="lazy"
+                                alt="Pagina de inicio de sesion de medicom">
+                        </picture>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <div id="consent-banner" style="display: none;"></div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video controls id="modal-video-player"></video>
+        </div>
+    </div>
+
+    <script src="matrix-rain.js" defer></script>
     <script type="module">
         import { loadLayout } from './components/components.js';
         await loadLayout();
