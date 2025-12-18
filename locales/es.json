@@ -14,6 +14,7 @@
     "lang_es": "Español",
     "lang_en": "English",
     "about_greeting": "Hola, soy",
+    "about_name": "José Quijada",
     "about_title": "Backend Developer",
     "about_description": "Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos tecnológicos. Busco aplicar mis conocimientos en desarrollo de software para entregar productos con código limpio, mantenible y escalable. Comprometido con las mejores prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de OWASP.",
     "experience_title": "Dónde he trabajado",
@@ -49,8 +50,7 @@
     "project_medicom_description": "Medicom es una sencilla aplicación que permite optimizar los expedientes médicos en un centro de salud, permitiendo las busqueda y registro de expedientes.",
     "consent_banner_text": "Uso Microsoft Clarity para analizar el uso del sitio web. ¿Aceptas el seguimiento?",
     "consent_banner_accept": "Aceptar",
-    "consent_banner_decline": "Rechazar"
-    ,
+    "consent_banner_decline": "Rechazar",
     "blog_filter_label": "Filtrar por tecnología:",
     "blog_filter_all": "Todas",
     "blog_back": "Volver"

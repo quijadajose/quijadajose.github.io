@@ -4,7 +4,7 @@ export async function initApp() {
     await loadTranslations();
 
     const userLang = navigator.language || navigator.userLanguage;
-    const defaultLang = userLang.startsWith('es') ? 'es' : 'en';
+    const defaultLang = userLang.startsWith('es') ? 'es' : (userLang.startsWith('ja') ? 'ja' : 'en');
     setLanguage(defaultLang);
 
     const languageSelector = document.getElementById('language-selector');
@@ -35,44 +35,8 @@ export async function initApp() {
         observer.observe(section);
     });
 
-    // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Matrix theme is dark by default, so we prioritize dark mode logic
-    // But we keep the toggle for user preference if they really want "light" mode (which is just inverted matrix)
-
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        updateThemeIcon(currentTheme);
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        updateThemeIcon('dark');
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            let newTheme = theme === 'dark' ? 'light' : 'dark';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-    }
-
-    function updateThemeIcon(theme) {
-        if (!themeToggle) return;
-        const icon = themeToggle.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
-    }
+    // Forcing dark theme as requested
+    document.documentElement.setAttribute('data-theme', 'dark');
 
     // Modal Logic for Videos
     const modal = document.getElementById('video-modal');

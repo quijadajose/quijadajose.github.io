@@ -18,47 +18,22 @@
 }
 
 /* Matrix Theme Variables */
+/* Unified Dark Theme (Matrix Style) */
 :root {
   --matrix-green: #00FF41;
   --matrix-dark-green: #003B00;
   --matrix-black: #0D0208;
   --matrix-pale: #D3FBD8;
-  /* For high contrast text if needed */
 
   --primary-color: var(--matrix-green);
   --secondary-color: var(--matrix-green);
-  /* Unified for the monochrome look */
   --text-color: var(--matrix-green);
   --bg-color: var(--matrix-black);
   --card-bg: rgba(0, 10, 0, 0.9);
-  /* More opaque for readability */
   --header-bg: rgba(13, 2, 8, 0.95);
 
   --glow-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
   --border-style: 1px solid var(--matrix-green);
-}
-
-/* Override for light theme (Matrix doesn't really have a light mode, but we keep the structure) */
-[data-theme="light"] {
-  --primary-color: #008F11;
-  --secondary-color: #00FF41;
-  --text-color: #003B00;
-  --bg-color: #E0E0E0;
-  --card-bg: #FFFFFF;
-  --header-bg: #F0F0F0;
-  --glow-shadow: none;
-}
-
-/* Force Dark Mode for the true Matrix feel if user hasn't toggled */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: var(--matrix-green);
-    --secondary-color: var(--matrix-green);
-    --text-color: var(--matrix-green);
-    --bg-color: var(--matrix-black);
-    --card-bg: rgba(0, 10, 0, 0.9);
-    --header-bg: rgba(13, 2, 8, 0.95);
-  }
 }
 
 * {
@@ -710,8 +685,6 @@ select {
   cursor: pointer;
 }
 
-}
-
 nav ul {
   flex-wrap: wrap;
   gap: 1rem;
@@ -721,7 +694,6 @@ header {
   height: auto;
   padding: 1rem;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .header-controls {
@@ -730,7 +702,6 @@ header {
 
 main {
   margin-top: 140px;
-}
 }
 
 /* Helper Classes */
@@ -809,6 +780,7 @@ select {
   border: 1px solid var(--matrix-green);
   padding: 5px;
   font-family: inherit;
+  border-color: transparent;
 }
 
 /* Modal Styles */
