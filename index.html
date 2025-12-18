@@ -457,10 +457,10 @@
                             </span>
                         </div>
                     </div>
-                    <div class="media-container">
+                    <div class="media-container" data-img-src="public/link-shortener/linkShortener.png">
                         <picture>
                             <img height="170" width="360" src="public/link-shortener/linkShortener.png" loading="lazy"
-                                alt="Dashboard del acortador de enlaces">
+                                alt="Dashboard del acortador de enlaces" class="media-preview">
                         </picture>
                     </div>
                 </div>
@@ -509,9 +509,9 @@
                                 Astro</span>
                         </div>
                     </div>
-                    <div class="media-container">
+                    <div class="media-container" data-img-src="public/ETDI/ETDI.jpg">
                         <img height="170" width="360" src="public/ETDI/ETDI.jpg" loading="lazy"
-                            alt="Pagina de inicio de la biblioteca de recursos" />
+                            alt="Pagina de inicio de la biblioteca de recursos" class="media-preview" />
                     </div>
                 </div>
             </div>
@@ -546,9 +546,9 @@
                             </span>
                         </div>
                     </div>
-                    <div class="media-container">
+                    <div class="media-container" data-img-src="public/LVS/lvs.webp">
                         <img width="432" height="300" src="public/LVS/lvs.webp" loading="lazy"
-                            alt="Pagina de inicio de sesion de LVS" />
+                            alt="Pagina de inicio de sesion de LVS" class="media-preview" />
                     </div>
                 </div>
                 <div class="project-card">
@@ -576,12 +576,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="media-container">
+                    <div class="media-container" data-img-src="public/medicom/Login.webp">
 
                         <picture>
                             <source srcset="public/medicom/Login.webp" type="image/webp">
                             <img width="504" height="350" src="public/medicom/Login.jpeg" loading="lazy"
-                                alt="Pagina de inicio de sesion de medicom">
+                                alt="Pagina de inicio de sesion de medicom" class="media-preview">
                         </picture>
                     </div>
                 </div>
@@ -590,14 +590,7 @@
     </main>
     <div id="consent-banner" style="display: none;"></div>
 
-    <!-- Video Modal -->
-    <div id="video-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <video controls id="modal-video-player"></video>
-        </div>
-    </div>
-
+    <div id="media-modal"></div>
     <script src="matrix-rain.js" defer></script>
     <script type="module">
         import { loadLayout } from './components/components.js';

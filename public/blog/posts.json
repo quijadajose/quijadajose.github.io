@@ -2,36 +2,52 @@
   {
     "slug": "sso-keycloak-docker",
     "image": "https://quijadajose.github.io/public/tests.mp4",
-    "technologies": ["Docker", "Keycloak", "NestJS", "Angular", "Spring Boot"],
+    "technologies": [
+      "Docker",
+      "Keycloak",
+      "NestJS",
+      "Angular",
+      "Spring Boot"
+    ],
     "title": {
       "es": "SSO con Docker, Keycloak, NestJS, Angular y Spring Boot",
-      "en": "SSO with Docker, Keycloak, NestJS, Angular and Spring Boot"
+      "en": "SSO with Docker, Keycloak, NestJS, Angular and Spring Boot",
+      "ja": "Docker、Keycloak、NestJS、Angular、Spring Bootを使用したSSO"
     },
     "description": {
       "es": "Este repositorio contiene un proyecto de demostración y un tutorial paso a paso para configurar Keycloak como proveedor de identidad (IdP) dentro de un sistema de Single Sign-On (SSO) ",
-      "en": "This repository contains a demo project and a step-by-step tutorial for configuring Keycloak as an Identity Provider (IdP) within a Single Sign-On (SSO) system."
+      "en": "This repository contains a demo project and a step-by-step tutorial for configuring Keycloak as an Identity Provider (IdP) within a Single Sign-On (SSO) system.",
+      "ja": "このリポジトリには、シングルサインオン (SSO) システム内で Keycloak を ID プロバイダー (IdP) として構成するためのデモプロジェクトとステップバイステップのチュートリアルが含まれています。"
     },
     "readmeUrl": {
       "es": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md",
-      "en": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md"
+      "en": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md",
+      "ja": "https://raw.githubusercontent.com/quijadajose/keycloak-sso-fullstack-demo/refs/heads/main/README.md"
     }
   },
   {
     "slug": "nixos-local-https",
     "image": "public/nixos-local-https.png",
-    "technologies": ["NixOS", "Let's Encrypt", "DuckDNS", "Nginx"],
+    "technologies": [
+      "NixOS",
+      "Let's Encrypt",
+      "DuckDNS",
+      "Nginx"
+    ],
     "title": {
       "es": "HTTPS en Localhost con NixOS, Let's Encrypt y DuckDNS",
-      "en": "HTTPS on Localhost with NixOS, Let's Encrypt, and DuckDNS"
+      "en": "HTTPS on Localhost with NixOS, Let's Encrypt, and DuckDNS",
+      "ja": "NixOS、Let's Encrypt、DuckDNS を使用した Localhost での HTTPS"
     },
     "description": {
       "es": "Este proyecto demuestra cómo obtener certificados SSL/TLS válidos de Let's Encrypt para dominios de desarrollo en un entorno local (localhost) usando NixOS y Flakes.",
-      "en": "This project demonstrates how to obtain valid SSL/TLS certificates from Let's Encrypt for development domains in a local environment (localhost) using NixOS and Flakes."
+      "en": "This project demonstrates how to obtain valid SSL/TLS certificates from Let's Encrypt for development domains in a local environment (localhost) using NixOS and Flakes.",
+      "ja": "このプロジェクトは、NixOS と Flakes を使用して、ローカル環境 (localhost) の開発ドメインに対して Let's Encrypt から有効な SSL/TLS 証明書を取得する方法を示しています。"
     },
     "readmeUrl": {
       "es": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README.md",
-      "en": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README_EN.md"
+      "en": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README_EN.md",
+      "ja": "https://raw.githubusercontent.com/quijadajose/nixos-local-https/refs/heads/main/README_EN.md"
     }
   }
 ]
-

@@ -40,11 +40,11 @@ export async function initApp() {
     // Force dark theme
     document.documentElement.setAttribute('data-theme', 'dark');
 
-    // Modal Logic for Videos
+    // Modal Logic for Media (Video and Image)
     const modal = document.getElementById('video-modal');
     const modalVideo = document.getElementById('modal-video-player');
+    const modalImage = document.getElementById('modal-image-player');
     const closeModalBtn = document.querySelector('.close-modal');
-    const mediaContainers = document.querySelectorAll('.media-container[data-video-src]');
 
     function closeModal() {
         if (modal) {
@@ -52,20 +52,46 @@ export async function initApp() {
             if (modalVideo) {
                 modalVideo.pause();
                 modalVideo.src = '';
+                modalVideo.style.display = 'none';
+            }
+            if (modalImage) {
+                modalImage.src = '';
+                modalImage.style.display = 'none';
             }
         }
     }
 
-    mediaContainers.forEach(container => {
-        container.addEventListener('click', () => {
-            const videoSrc = container.getAttribute('data-video-src');
-            if (videoSrc && modal && modalVideo) {
-                modal.style.display = 'block';
-                modalVideo.src = videoSrc;
-                modalVideo.play();
-            }
+    // This function can be called after dynamic content is loaded (like in blog.html)
+    window.initModals = function () {
+        const mediaContainers = document.querySelectorAll('.media-container[data-video-src], .media-container[data-img-src]');
+
+        mediaContainers.forEach(container => {
+            // Remove old listeners to avoid duplicates
+            const newContainer = container.cloneNode(true);
+            container.parentNode.replaceChild(newContainer, container);
+
+            newContainer.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card click in blog
+                const videoSrc = newContainer.getAttribute('data-video-src');
+                const imgSrc = newContainer.getAttribute('data-img-src');
+
+                if (modal) {
+                    modal.style.display = 'block';
+                    if (videoSrc && modalVideo) {
+                        modalVideo.style.display = 'block';
+                        modalVideo.src = videoSrc;
+                        modalVideo.play();
+                    } else if (imgSrc && modalImage) {
+                        modalImage.style.display = 'block';
+                        modalImage.src = imgSrc;
+                    }
+                }
+            });
         });
-    });
+    };
+
+    // Initial run
+    window.initModals();
 
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeModal);
@@ -73,6 +99,13 @@ export async function initApp() {
 
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Cleanup for ESC key
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
             closeModal();
         }
     });

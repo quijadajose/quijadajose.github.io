@@ -58,6 +58,7 @@
     </section>
   </main>
   <div id="consent-banner" style="display:none"></div>
+  <div id="media-modal"></div>
   <script type="module">
     import { loadLayout } from './components/components.js';
     await loadLayout();
@@ -70,7 +71,7 @@
       current: null,
     };
 
-    const currentLang = localStorage.getItem('language') || 'es';
+    const currentLang = localStorage.getItem('language') || (navigator.language.startsWith('ja') ? 'ja' : (navigator.language.startsWith('es') ? 'es' : 'en'));
 
     async function fetchPosts() {
       const res = await fetch('public/blog/posts.json', { cache: 'no-cache' });
@@ -115,20 +116,25 @@
         const isVideo = typeof post.image === 'string' && /(\.mp4|\.webm|\.ogg)(\?.*)?$/i.test(post.image);
         const mediaHtml = isVideo
           ? `<video src="${post.image}" class="media-preview" style="opacity:1" muted playsinline loop preload="metadata"></video>`
-          : `<img src="${post.image}" alt="${post.title[currentLang] || post.title.en || post.title.es}" loading="lazy" class="media-preview" />`;
+          : `<img src="${post.image}" alt="${post.title[currentLang] || post.title.ja || post.title.en || post.title.es}" loading="lazy" class="media-preview" />`;
+
         card.innerHTML = `
           <div class="project-info">
-            <h3>${post.title[currentLang] || post.title.en || post.title.es}</h3>
-            <p>${post.description[currentLang] || post.description.en || post.description.es}</p>
+            <h3>${post.title[currentLang] || post.title.ja || post.title.en || post.title.es}</h3>
+            <p>${post.description[currentLang] || post.description.ja || post.description.en || post.description.es}</p>
             <div class="tech-badges">${post.technologies.map(t => `<span>${t}</span>`).join('')}</div>
           </div>
           <div class="project-video">
-            <div class="media-container">
+            <div class="media-container" ${isVideo ? `data-video-src="${post.image}"` : `data-img-src="${post.image}"`}>
               ${mediaHtml}
             </div>
           </div>`;
         card.style.cursor = 'pointer';
-        card.addEventListener('click', () => showDetail(post));
+        card.addEventListener('click', (e) => {
+          // Don't open detail if clicking on media-container (handled by modal)
+          if (e.target.closest('.media-container')) return;
+          showDetail(post);
+        });
 
         if (isVideo) {
           const container = card.querySelector('.media-container');
@@ -145,6 +151,9 @@
         }
         list.appendChild(card);
       });
+
+      // Initialize modals for the new cards
+      if (window.initModals) window.initModals();
     }
 
     const loadScript = (src) => new Promise((resolve, reject) => {
@@ -187,8 +196,8 @@
       det.style.display = 'block';
       history.replaceState(null, '', `?post=${encodeURIComponent(post.slug)}`);
 
-      const langForReadme = ['es', 'en'].includes(currentLang) ? currentLang : 'en';
-      const url = post.readmeUrl[langForReadme] || post.readmeUrl.en || post.readmeUrl.es;
+      const langForReadme = ['es', 'en', 'ja'].includes(currentLang) ? currentLang : 'en';
+      const url = post.readmeUrl[langForReadme] || post.readmeUrl.ja || post.readmeUrl.en || post.readmeUrl.es;
       const baseDirUrl = url.slice(0, url.lastIndexOf('/') + 1);
       try {
         const res = await fetch(url);
@@ -217,6 +226,12 @@
             img.src = absolutize(s);
           }
           img.loading = 'lazy';
+          img.style.maxWidth = '100%';
+          img.style.height = 'auto';
+          img.style.display = 'block';
+          img.style.margin = '1rem auto';
+          img.style.border = '1px solid var(--matrix-green)';
+          img.style.boxShadow = 'var(--glow-shadow)';
         });
         contentEl.querySelectorAll('a').forEach(a => {
           const h = a.getAttribute('href') || '';
