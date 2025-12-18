@@ -2,7 +2,7 @@ export async function loadComponent(selector, url) {
   const host = document.querySelector(selector);
   if (!host) return null;
   try {
-    const res = await fetch(url, { cache: 'no-cache' });
+    const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to load ${url}`);
     const html = await res.text();
     host.outerHTML = html;
@@ -14,7 +14,9 @@ export async function loadComponent(selector, url) {
 }
 
 export async function loadLayout() {
-  await loadComponent('header', 'components/header.html');
-  await loadComponent('#consent-banner', 'components/consent-banner.html');
+  // Load components in parallel
+  await Promise.all([
+    loadComponent('header', 'components/header.html'),
+    loadComponent('#consent-banner', 'components/consent-banner.html')
+  ]);
 }
-

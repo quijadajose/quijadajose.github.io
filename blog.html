@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -28,13 +28,13 @@
   <style>
     a {
       display: inline-flex;
-      align-items: center;      
+      align-items: center;
       text-decoration: none;
       color: var(--secondary-color);
     }
   </style>
 
-<header></header>
+  <header></header>
   <main>
     <section class="projects-section" id="blog-index">
       <h1 data-i18n="blog_title">Blog técnico</h1>
@@ -135,11 +135,11 @@
           const videoEl = container.querySelector('video');
           if (videoEl) {
             container.addEventListener('mouseenter', () => {
-              try { videoEl.play(); } catch {}
+              try { videoEl.play(); } catch { }
             });
             container.addEventListener('mouseleave', () => {
-              try { videoEl.pause(); } catch {}
-              try { videoEl.currentTime = 0; } catch {}
+              try { videoEl.pause(); } catch { }
+              try { videoEl.currentTime = 0; } catch { }
             });
           }
         }

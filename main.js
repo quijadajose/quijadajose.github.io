@@ -1,11 +1,13 @@
-import { loadTranslations, setLanguage, translatePage } from './components/i18n.js';
+import { loadTranslations, setLanguage } from './components/i18n.js';
 
 export async function initApp() {
-    await loadTranslations();
-
+    // Detect language
+    const storedLang = localStorage.getItem('language');
     const userLang = navigator.language || navigator.userLanguage;
-    const defaultLang = userLang.startsWith('es') ? 'es' : (userLang.startsWith('ja') ? 'ja' : 'en');
-    setLanguage(defaultLang);
+    const defaultLang = storedLang || (userLang.startsWith('es') ? 'es' : (userLang.startsWith('ja') ? 'ja' : 'en'));
+
+    // Initialize with the correct language
+    await setLanguage(defaultLang);
 
     const languageSelector = document.getElementById('language-selector');
     if (languageSelector) {
@@ -22,11 +24,11 @@ export async function initApp() {
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -35,7 +37,7 @@ export async function initApp() {
         observer.observe(section);
     });
 
-    // Forcing dark theme as requested
+    // Force dark theme
     document.documentElement.setAttribute('data-theme', 'dark');
 
     // Modal Logic for Videos
@@ -43,6 +45,16 @@ export async function initApp() {
     const modalVideo = document.getElementById('modal-video-player');
     const closeModalBtn = document.querySelector('.close-modal');
     const mediaContainers = document.querySelectorAll('.media-container[data-video-src]');
+
+    function closeModal() {
+        if (modal) {
+            modal.style.display = 'none';
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.src = '';
+            }
+        }
+    }
 
     mediaContainers.forEach(container => {
         container.addEventListener('click', () => {
@@ -56,9 +68,7 @@ export async function initApp() {
     });
 
     if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
-            closeModal();
-        });
+        closeModalBtn.addEventListener('click', closeModal);
     }
 
     window.addEventListener('click', (event) => {
@@ -66,16 +76,6 @@ export async function initApp() {
             closeModal();
         }
     });
-
-    function closeModal() {
-        if (modal) {
-            modal.style.display = 'none';
-            if (modalVideo) {
-                modalVideo.pause();
-                modalVideo.src = ''; // Clear source to stop buffering
-            }
-        }
-    }
 }
 
 // Initialize the app
