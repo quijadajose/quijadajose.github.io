@@ -41,13 +41,67 @@ export async function initApp() {
     document.documentElement.setAttribute('data-theme', 'dark');
 
     // Modal Logic for Media (Video and Image)
-    const modal = document.getElementById('video-modal');
-    const modalVideo = document.getElementById('modal-video-player');
-    const modalImage = document.getElementById('modal-image-player');
-    const closeModalBtn = document.querySelector('.close-modal');
+    // Funciones helper para obtener elementos del modal (por si se cargan dinámicamente)
+    function getModalElements() {
+        return {
+            modal: document.getElementById('video-modal'),
+            modalVideo: document.getElementById('modal-video-player'),
+            modalImage: document.getElementById('modal-image-player'),
+            closeModalBtn: document.querySelector('.close-modal')
+        };
+    }
+
+    function openModal(videoSrc, imgSrc) {
+        const { modal, modalVideo, modalImage } = getModalElements();
+        if (!modal) return;
+
+        const transition = document.startViewTransition ? document.startViewTransition(() => {
+            modal.style.display = 'block';
+            if (videoSrc && modalVideo) {
+                modalVideo.style.display = 'block';
+                modalVideo.src = videoSrc;
+                modalVideo.play().catch(() => {
+                    // Ignorar errores de autoplay
+                });
+            } else if (imgSrc && modalImage) {
+                modalImage.style.display = 'block';
+                modalImage.src = imgSrc;
+            }
+        }) : null;
+
+        if (!transition) {
+            // Fallback para navegadores sin soporte
+            modal.style.display = 'block';
+            if (videoSrc && modalVideo) {
+                modalVideo.style.display = 'block';
+                modalVideo.src = videoSrc;
+                modalVideo.play().catch(() => {});
+            } else if (imgSrc && modalImage) {
+                modalImage.style.display = 'block';
+                modalImage.src = imgSrc;
+            }
+        }
+    }
 
     function closeModal() {
-        if (modal) {
+        const { modal, modalVideo, modalImage } = getModalElements();
+        if (!modal) return;
+
+        const transition = document.startViewTransition ? document.startViewTransition(() => {
+            modal.style.display = 'none';
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.src = '';
+                modalVideo.style.display = 'none';
+            }
+            if (modalImage) {
+                modalImage.src = '';
+                modalImage.style.display = 'none';
+            }
+        }) : null;
+
+        if (!transition) {
+            // Fallback para navegadores sin soporte
             modal.style.display = 'none';
             if (modalVideo) {
                 modalVideo.pause();
@@ -60,6 +114,10 @@ export async function initApp() {
             }
         }
     }
+
+    // Hacer las funciones disponibles globalmente para uso en otros scripts
+    window.openModal = openModal;
+    window.closeModal = closeModal;
 
     // This function can be called after dynamic content is loaded (like in blog.html)
     window.initModals = function () {
@@ -75,17 +133,7 @@ export async function initApp() {
                 const videoSrc = newContainer.getAttribute('data-video-src');
                 const imgSrc = newContainer.getAttribute('data-img-src');
 
-                if (modal) {
-                    modal.style.display = 'block';
-                    if (videoSrc && modalVideo) {
-                        modalVideo.style.display = 'block';
-                        modalVideo.src = videoSrc;
-                        modalVideo.play();
-                    } else if (imgSrc && modalImage) {
-                        modalImage.style.display = 'block';
-                        modalImage.src = imgSrc;
-                    }
-                }
+                openModal(videoSrc, imgSrc);
             });
         });
     };
@@ -93,15 +141,23 @@ export async function initApp() {
     // Initial run
     window.initModals();
 
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeModal);
-    }
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
+    // Configurar event listeners para cerrar el modal
+    // Usar setTimeout para asegurar que el modal se haya cargado si es dinámico
+    setTimeout(() => {
+        const { modal, closeModalBtn } = getModalElements();
+        
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
         }
-    });
+
+        if (modal) {
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+    }, 100);
 
     // Cleanup for ESC key
     window.addEventListener('keydown', (event) => {
@@ -109,6 +165,64 @@ export async function initApp() {
             closeModal();
         }
     });
+
+    // View Transitions para navegación entre páginas
+    if ('startViewTransition' in document) {
+        // Interceptar clicks en enlaces internos
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href]');
+            if (!anchor) return;
+
+            const href = anchor.getAttribute('href');
+            // Solo procesar enlaces internos (no externos, no anchors en la misma página)
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('http') || anchor.hasAttribute('target')) {
+                return;
+            }
+
+            // Verificar si es un enlace a otra página
+            try {
+                const url = new URL(href, window.location.href);
+                if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+                    e.preventDefault();
+                    document.startViewTransition(() => {
+                        window.location.href = href;
+                    });
+                }
+            } catch {
+                // Si no es una URL válida, ignorar
+            }
+        });
+    }
+
+    // View Transitions para navegación por anchors (scroll suave con transición)
+    if ('startViewTransition' in document) {
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                e.preventDefault();
+                // Usar view transition solo si estamos en la misma página
+                if (window.location.pathname === anchor.pathname || !anchor.pathname || anchor.pathname === window.location.pathname) {
+                    document.startViewTransition(() => {
+                        // Calcular posición considerando el header fijo
+                        const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    });
+                } else {
+                    // Si es otra página, usar el comportamiento normal
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    }
 }
 
 // Initialize the app

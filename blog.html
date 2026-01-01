@@ -192,8 +192,22 @@
       const det = document.getElementById('blog-detail');
       const titleEl = document.getElementById('post-title');
       const contentEl = document.getElementById('post-content');
-      idx.style.display = 'none';
-      det.style.display = 'block';
+
+      // Actualizar título antes de la transición
+      titleEl.textContent = post.title[currentLang] || post.title.ja || post.title.en || post.title.es;
+
+      const transition = document.startViewTransition ? document.startViewTransition(() => {
+        idx.style.display = 'none';
+        det.style.display = 'block';
+      }) : null;
+
+      if (transition) {
+        await transition.finished;
+      } else {
+        idx.style.display = 'none';
+        det.style.display = 'block';
+      }
+
       history.replaceState(null, '', `?post=${encodeURIComponent(post.slug)}`);
 
       const langForReadme = ['es', 'en', 'ja'].includes(currentLang) ? currentLang : 'en';
@@ -249,11 +263,22 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    document.getElementById('back-to-list').addEventListener('click', () => {
+    document.getElementById('back-to-list').addEventListener('click', async () => {
       const idx = document.getElementById('blog-index');
       const det = document.getElementById('blog-detail');
-      det.style.display = 'none';
-      idx.style.display = 'block';
+      
+      const transition = document.startViewTransition ? document.startViewTransition(() => {
+        det.style.display = 'none';
+        idx.style.display = 'block';
+      }) : null;
+
+      if (transition) {
+        await transition.finished;
+      } else {
+        det.style.display = 'none';
+        idx.style.display = 'block';
+      }
+
       history.replaceState(null, '', location.pathname);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });

@@ -35,6 +35,138 @@
   --border-style: 1px solid var(--matrix-green);
 }
 
+/* View Transitions */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-old(root) {
+    animation-name: fade-out, slide-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: fade-in, slide-in;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-20px);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(20px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* View transitions para secciones */
+  section {
+    view-transition-name: var(--section-name, none);
+  }
+
+  /* View transitions para blog */
+  #blog-index {
+    view-transition-name: blog-index;
+  }
+
+  #blog-detail {
+    view-transition-name: blog-detail;
+  }
+
+  ::view-transition-old(blog-index),
+  ::view-transition-new(blog-detail) {
+    animation-duration: 0.3s;
+  }
+
+  ::view-transition-old(blog-detail),
+  ::view-transition-new(blog-index) {
+    animation-duration: 0.3s;
+  }
+
+  /* View transitions para modales */
+  .modal {
+    view-transition-name: modal;
+  }
+
+  .modal-content {
+    view-transition-name: modal-content;
+  }
+
+  ::view-transition-old(modal),
+  ::view-transition-new(modal) {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-old(modal-content),
+  ::view-transition-new(modal-content) {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-old(modal) {
+    animation-name: fade-out, scale-out;
+  }
+
+  ::view-transition-new(modal) {
+    animation-name: fade-in, scale-in;
+  }
+
+  ::view-transition-old(modal-content) {
+    animation-name: fade-out, scale-out;
+  }
+
+  ::view-transition-new(modal-content) {
+    animation-name: fade-in, scale-in;
+  }
+
+  @keyframes scale-out {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.9);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
