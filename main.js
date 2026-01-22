@@ -210,12 +210,15 @@ export async function initApp() {
                 e.preventDefault();
                 // Usar view transition solo si estamos en la misma página
                 if (window.location.pathname === anchor.pathname || !anchor.pathname || anchor.pathname === window.location.pathname) {
-                    document.startViewTransition(() => {
-                        // Calcular posición considerando el header fijo
-                        const headerHeight = document.querySelector('header')?.offsetHeight || 80;
-                        const targetPosition = targetElement.offsetTop - headerHeight;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    });
+                    const scrollAction = () => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    };
+
+                    if (document.startViewTransition) {
+                        document.startViewTransition(scrollAction);
+                    } else {
+                        scrollAction();
+                    }
                 } else {
                     // Si es otra página, usar el comportamiento normal
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });

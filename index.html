@@ -16,6 +16,7 @@
         data-i18n="og_description">
     <meta property="og:image" content="./public/picture.jpg">
     <meta property="og:type" content="website">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <title data-i18n="page_title">Backend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -77,7 +78,7 @@
 
                     <div class="about-body">
                         <div class="about-info">
-                            <h2>Backend Developer</h2>
+                            <h2><span lang="en">Backend Developer</span></h2>
                             <p data-i18n="about_description">
                                 Ingeniero de sistemas autodidacta y creativo, apasionado por resolver desafíos
                                 tecnológicos.
@@ -86,7 +87,7 @@
                                 escalable.
                                 Comprometido con las mejores
                                 prácticas de desarrollo y seguridad, incluyendo la adherencia a los lineamientos de
-                                OWASP.
+                                <span lang="en">OWASP</span>.
                             </p>
                             <div class="social-links">
                                 <a target="_blank" href="https://github.com/quijadajose" title="GitHub"
@@ -123,94 +124,101 @@
         <section id="experience" class="experience-section">
             <h2 data-i18n="experience_title">Dónde he trabajado</h2>
             <div class="experience-cards">
-                <div class="experience-card">
-                    <h3 data-i18n="experience_1_company">AGENCIA DE VIAJES L&L TOURS</h3>
-                    <h4 data-i18n="experience_1_title">Full Stack Developer y Front-end</h4>
+                <article class="experience-card">
+                    <header>
+                        <h3 data-i18n="experience_1_company">AGENCIA DE VIAJES L&L TOURS</h3>
+                        <h4 data-i18n="experience_1_title"><span lang="en">Full Stack Developer</span> y <span
+                                lang="en">Front-end</span></h4>
+                    </header>
                     <p data-i18n="experience_1_description">Trabajé estrechamente con el cliente en el análisis de
                         requerimientos para desarrollar
                         funcionalidades críticas en la plataforma de reservas (CERVO). Analizamos las necesidades y
                         seleccionamos en conjunto las tecnologías más adecuadas, lo que permitió un desarrollo escalable
                         y eficiente. Implementé CI/CD para mejorar los ciclos de entrega y optimicé la seguridad del
-                        sistema siguiendo los lineamientos OWASP.</p>
-                    <div class="tech-badges">
+                        sistema siguiendo los lineamientos <span lang="en">OWASP</span>.</p>
+                    <aside class="tech-badges">
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/php.svg" alt="php logo">
-                            PHP
+                            <span lang="en">PHP</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/angular.svg" alt="angular logo">
-                            Angular
+                            <span lang="en">Angular</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/git.svg" alt="git logo">
-                            Git
+                            <span lang="en">Git</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/Jira.svg" alt="jira logo">
-                            Jira
+                            <span lang="en">Jira</span>
                         </span>
-                    </div>
-                </div>
-                <div class="experience-card">
-                    <h3 data-i18n="experience_2_company">BIOONIX, SUTTENE</h3>
-                    <h4 data-i18n="experience_2_title">Full Stack Developer</h4>
+                    </aside>
+                </article>
+                <article class="experience-card">
+                    <header>
+                        <h3 data-i18n="experience_2_company">BIOONIX, SUTTENE</h3>
+                        <h4 data-i18n="experience_2_title"><span lang="en">Full Stack Developer</span></h4>
+                    </header>
                     <p data-i18n="experience_2_description">Desarrollé el sistema de gestión para el Sindicato Único de
                         Trabajadores del
                         Transporte, desde la fase de análisis hasta la entrega final. Colaboré con el cliente para
                         entender las necesidades específicas y escoger la tecnología más adecuada, logrando una solución
                         integral para la gestión de choferes y vehículos.</p>
-                    <div class="tech-badges">
+                    <aside class="tech-badges">
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/angular.svg" alt="angular logo">
-                            Angular
+                            <span lang="en">Angular</span>
                         </span>
                         <span>
                             <img class="logo" width="16" height="16" src="./public/tecnologis/expressjs.svg"
                                 alt="express js logo">
-                            Express</span>
+                            <span lang="en">Express</span></span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/mariadb.svg" alt="java logo">
-                            MariaDB</span>
+                            <span lang="en">MariaDB</span></span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/typescript.png" alt="typescript logo">
-                            TypeScript
+                            <span lang="en">TypeScript</span>
                         </span>
-                    </div>
-                </div>
+                    </aside>
+                </article>
             </div>
         </section>
 
         <section id="projects" class="projects-section">
             <h2 data-i18n="projects_title">Más información de los proyectos</h2>
             <div class="project-cards">
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a href="https://cervotravel.app/" target="_blank" rel="noopener noreferrer">
-                                CERVO
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a href="https://cervotravel.app/" target="_blank" rel="noopener noreferrer">
+                                    CERVO
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_cervo_description">
-                            Desarrollé el frontend, implementando
+                            Desarrollé el <span lang="en">frontend</span>, implementando
                             funcionalidades como búsqueda y reserva de vuelos, hoteles y tours, carrito de compras,
                             visualización de métricas, administración de
                             módulos entre otras funcionalidades.</p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/angular.svg" alt="angular logo">
-                                Angular
+                                <span lang="en">Angular</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/bootstrap.svg"
                                     alt="Bootstrap 5 logo">
-                                Bootstrap 5
+                                <span lang="en">Bootstrap 5</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/git.svg" alt="git logo">
-                                Git
+                                <span lang="en">Git</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/cervo/cervo.mp4">
                         <picture>
@@ -219,30 +227,32 @@
                                 alt="Pagina de inicio de sesion de CERVO" class="media-preview">
                         </picture>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
                         <div>
-                            <h3>SUTTENE</h3>
+                            <header>
+                                <h3>SUTTENE</h3>
+                            </header>
                             <p data-i18n="project_suttene_description">Sistema de gestión para el transporte público que
                                 permite registrar conductores, vehículos,
                                 escanear códigos QR, registrar pagos y generar reportes.</p>
                         </div>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/angular.svg" alt="angular logo">
-                                Angular
+                                <span lang="en">Angular</span>
                             </span>
                             <span>
                                 <img class="logo" width="16" height="16" src="./public/tecnologis/expressjs.svg"
                                     alt="express js logo">
-                                Express</span>
+                                <span lang="en">Express</span></span>
                             <span style="font-size: 0.7rem;">
                                 <img width="16" height="16" src="./public/tecnologis/mariadb.svg" alt="mariadb logo">
-                                MariaDB
+                                <span lang="en">MariaDB</span>
                             </span>
 
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/suttene/suttene-short.mp4">
                         <picture>
@@ -251,76 +261,81 @@
                                 alt="Pagina de inicio de sesion de SUTTENE" class="media-preview">
                         </picture>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a target="_blank" rel="noopener noreferrer">
-                                CERVO Legacy
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
-                        <p data-i18n="project_cervo_legacy_description">Mantenimiento del sistema legacy y desarrollo de
+                        <header>
+                            <h3>
+                                <a target="_blank" rel="noopener noreferrer">
+                                    CERVO <span lang="en">Legacy</span>
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
+                        <p data-i18n="project_cervo_legacy_description">Mantenimiento del sistema <span
+                                lang="en">legacy</span> y desarrollo de
                             nuevas funcionalidades utilizando. Incluyó
                             la refactorización del código para mejorar la seguridad y la
                             integración de la API de Amadeus para optimizar la disponibilidad de vuelos.</p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/php.svg" alt="php logo">
-                                PHP
+                                <span lang="en">PHP</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/fileZilla.svg"
                                     alt="FileZilla logo">
-                                FTP
+                                <span lang="en">FTP</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/mysql.svg" alt="mysql logo">
-                                MySQL
+                                <span lang="en">MySQL</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container">
                         <picture>
                             <source srcset="public/cervo-legacy/cervo-legacy.webp" type="image/webp">
                             <img height="170" width="360" src="public/cervo-legacy/cervo-legacy.jpg" loading="lazy"
-                                alt="Pagina de inicio de sesion de CERVO legacy">
+                                alt="Pagina de inicio de sesion de CERVO legacy" class="media-preview">
                         </picture>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <section id="opensource" class="opensource-section">
             <h2 data-i18n="opensource_title">Proyectos Open Source en Desarrollo</h2>
             <div class="opensource-cards">
-                <div class="opensource-card">
-                    <h3 data-i18n="opensource_lsv2_title">Lenguaje de señas venezolano (LSV) V2</h3>
+                <article class="opensource-card">
+                    <header>
+                        <h3 data-i18n="opensource_lsv2_title">Lenguaje de señas venezolano (LSV) V2</h3>
+                    </header>
                     <p data-i18n="opensource_lsv2_description"> La aplicación LVS busca enseñar el lenguaje de señas
                         venezolano de una manera divertida y
                         rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
-                    <div class="tech-badges">
+                    <aside class="tech-badges">
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/React.svg" alt="react logo">
-                            React
+                            <span lang="en">React</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/nestjs.webp" alt="git logo">
-                            NestJs
+                            <span lang="en">NestJs</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/docker.svg" alt="docker logo">
-                            Docker
+                            <span lang="en">Docker</span>
                         </span>
                         <span>
                             <img width="16" height="16" src="./public/tecnologis/git.svg" alt="git logo">
-                            Git
+                            <span lang="en">Git</span>
                         </span>
-                    </div>
+                    </aside>
                     <a href="https://github.com/quijadajose/LSV" class="github-link link">
                         <i class="fab fa-github"></i> <span data-i18n="see_on_github">Ver en GitHub</span>
                     </a>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -328,29 +343,31 @@
             <h2 data-i18n="hobbies_title">Hackatones, colaboraciones y más</h2>
             <div class="project-cards">
 
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a href="https://mathful-dev.pages.dev/" target="_blank" rel="noopener noreferrer">
-                                Mathful
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a href="https://mathful-dev.pages.dev/" target="_blank" rel="noopener noreferrer">
+                                    Mathful
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_mathful_description">
                             Con este proyecto participe en la hackaton de midudev, permite resolver problemas
                             matematicos usando inteligencia artificial.
                         </p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img class="logo" width="16" height="16" src="./public/tecnologis/expressjs.svg"
                                     alt="express js logo">
-                                Express
+                                <span lang="en">Express</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
-                                Gemini
+                                <span lang="en">Gemini</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/mathful/funcionamiento.mp4">
                         <picture>
@@ -359,30 +376,34 @@
                                 alt="Pagina mathful" class="media-preview">
                         </picture>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a data-i18n="project_discord_title" href="https://github.com/quijadajose/resumidor"
-                                target="_blank" rel="noopener noreferrer">
-                                Resumidor de Discord
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a data-i18n="project_discord_title" href="https://github.com/quijadajose/resumidor"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Resumidor de Discord
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_discord_description">
-                            Este proyecto permite resumir mensajes de un servidor de Discord utilizando la API
-                            generativa de Google Gemini y la sencillez de JavaScript.
+                            Este proyecto permite resumir mensajes de un servidor de <span lang="en">Discord</span>
+                            utilizando la <span lang="en">API</span>
+                            generativa de <span lang="en">Google Gemini</span> y la sencillez de <span
+                                lang="en">JavaScript</span>.
                         </p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/js.svg" alt="JavaScript logo">
-                                JavaScript</span>
+                                <span lang="en">JavaScript</span></span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/gemini.png" alt="gemini logo">
-                                Gemini
+                                <span lang="en">Gemini</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/discord/discord.mp4">
                         <picture>
@@ -391,32 +412,35 @@
                                 alt="Resumidor de Discord" class="media-preview" />
                         </picture>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a href="https://github.com/quijadajose/YouTube-Transcriber" target="_blank"
-                                rel="noopener noreferrer">
-                                YouTube Transcriber
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a href="https://github.com/quijadajose/YouTube-Transcriber" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span lang="en">YouTube Transcriber</span>
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_youtube_description">
                             Este proyecto cli que permite descargar videos de
-                            YouTube y transcribir su contenido de audio utilizando el modelo Whisper.
+                            <span lang="en">YouTube</span> y transcribir su contenido de audio utilizando el modelo
+                            <span lang="en">Whisper</span>.
                         </p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/python.png" alt="python logo">
 
-                                Python</span>
+                                <span lang="en">Python</span></span>
 
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/docker.svg" alt="docker logo">
-                                Docker
+                                <span lang="en">Docker</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/youTube-transcriber/youTube-transcriber.mp4">
                         <picture>
@@ -425,37 +449,41 @@
                                 loading="lazy" alt="transcriptor de discord" class="media-preview" />
                         </picture>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a data-i18n="project_shortener_title" href="https://github.com/quijadajose/link-shortener">
-                                Acortador de enlaces
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a data-i18n="project_shortener_title"
+                                    href="https://github.com/quijadajose/link-shortener">
+                                    Acortador de enlaces
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_shortener_description">
                             Este proyecto es un acortador de enlaces que permite a los usuarios gestionar sus URLs de
-                            manera sencilla y segura, utilizando autenticación OAuth de GitHub y protección adicional
-                            mediante HMAC y cookies seguras.
+                            manera sencilla y segura, utilizando autenticación <span lang="en">OAuth</span> de <span
+                                lang="en">GitHub</span> y protección adicional
+                            mediante <span lang="en">HMAC</span> y cookies seguras.
                         </p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="public/tecnologis/Cloudflare.svg"
                                     alt="cloudflare logo">
-                                Cloudflare
+                                <span lang="en">Cloudflare</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="public/tecnologis/CloudflareWorkers.svg"
                                     alt="cloudflare logo">
-                                Workers
+                                <span lang="en">Workers</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="public/tecnologis/github-mark-white.svg"
                                     alt="github logo">
-                                OAuth GitHub
+                                <span lang="en">OAuth GitHub</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-img-src="public/link-shortener/linkShortener.png">
                         <picture>
@@ -463,57 +491,61 @@
                                 alt="Dashboard del acortador de enlaces" class="media-preview">
                         </picture>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a data-i18n="project_piano_title"
-                                href="https://github.com/quijadajose/Electronic-Keyboard-CLI">
-                                Piano CLI
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a data-i18n="project_piano_title"
+                                    href="https://github.com/quijadajose/Electronic-Keyboard-CLI">
+                                    <span lang="en">Piano CLI</span>
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_piano_description">
                             Este es un experimento que fusiona la música con la terminal. Permite
                             explorar las notas de una manera única, tocandolas en la consola.
                         </p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/js.svg" alt="JavaScript logo">
-                                JavaScript</span>
-                        </div>
+                                <span lang="en">JavaScript</span></span>
+                        </aside>
                     </div>
                     <div class="media-container" data-video-src="public/electronic-keyboard/electronic-keyboard.mp4">
                         <img height="170" width="360" src="public/electronic-keyboard/electronic-keyboard.png"
                             loading="lazy" alt="Piano CLI" class="media-preview" />
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
-                        <h3>
-                            <a data-i18n="project_etdi_title" href="https://github.com/El-Traductor-De-Ingenieria">
-                                Biblioteca de recursos
-                            </a>
-                            <span class="icon"></span>
-                        </h3>
+                        <header>
+                            <h3>
+                                <a data-i18n="project_etdi_title" href="https://github.com/El-Traductor-De-Ingenieria">
+                                    Biblioteca de recursos
+                                </a>
+                                <span class="icon"></span>
+                            </h3>
+                        </header>
                         <p data-i18n="project_etdi_description">Colabore en la cracion de una biblioteca de recursos
                             para la comunidad del traductor de
                             ingenieria donde se pudieran cargar archivos .</p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/nestjs.webp" alt="git logo">
-                                NestJs
+                                <span lang="en">NestJs</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/Astro.svg" alt="astro logo">
-                                Astro</span>
-                        </div>
+                                <span lang="en">Astro</span></span>
+                        </aside>
                     </div>
                     <div class="media-container" data-img-src="public/ETDI/ETDI.jpg">
                         <img height="170" width="360" src="public/ETDI/ETDI.jpg" loading="lazy"
                             alt="Pagina de inicio de la biblioteca de recursos" class="media-preview" />
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -521,60 +553,64 @@
             <h2 data-i18n="my_beginning_title">Mi comienzo en la programación</h2>
 
             <div class="project-cards">
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-info">
-                        <h3 data-i18n="project_lsv1_title"> Lenguaje de señas venezolano (LSV) V1</h3>
+                        <header>
+                            <h3 data-i18n="project_lsv1_title"> Lenguaje de señas venezolano (LSV) V1</h3>
+                        </header>
                         <p data-i18n="project_lsv1_description">
                             La aplicación LVS busca enseñar el lenguaje de señas venezolano de una manera divertida y
                             rápida, haciendo énfasis en las expresiones del estado Nueva Esparta.</p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/Java.svg" alt="java logo">
-                                Java
+                                <span lang="en">Java</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/Java.svg" alt="java logo">
-                                JavaFx
+                                <span lang="en">JavaFx</span>
                             </span>
                             <span style="font-size: 0.7rem;">
                                 <img width="16" height="16" src="./public/tecnologis/mysql.svg" alt="MySQL logo">
-                                MySQL
+                                <span lang="en">MySQL</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/git.svg" alt="git logo">
-                                Git
+                                <span lang="en">Git</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-img-src="public/LVS/lvs.webp">
                         <img width="432" height="300" src="public/LVS/lvs.webp" loading="lazy"
                             alt="Pagina de inicio de sesion de LVS" class="media-preview" />
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-info">
-                        <h3 data-i18n="project_medicom_title">Medicom</h3>
+                        <header>
+                            <h3 data-i18n="project_medicom_title">Medicom</h3>
+                        </header>
                         <p data-i18n="project_medicom_description">Medicom es una sencilla aplicación que permite
                             optimizar los expedientes médicos en un centro
                             de salud, permitiendo las busqueda y registro de expedientes.</p>
-                        <div class="tech-badges">
+                        <aside class="tech-badges">
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/Java.svg" alt="java logo">
-                                Java
+                                <span lang="en">Java</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/Java.svg" alt="java logo">
-                                JavaFx
+                                <span lang="en">JavaFx</span>
                             </span>
                             <span style="font-size: 0.7rem;">
                                 <img width="16" height="16" src="./public/tecnologis/mysql.svg" alt="MySQL logo">
-                                MySQL
+                                <span lang="en">MySQL</span>
                             </span>
                             <span>
                                 <img width="16" height="16" src="./public/tecnologis/git.svg" alt="git logo">
-                                Git
+                                <span lang="en">Git</span>
                             </span>
-                        </div>
+                        </aside>
                     </div>
                     <div class="media-container" data-img-src="public/medicom/Login.webp">
 
@@ -584,7 +620,7 @@
                                 alt="Pagina de inicio de sesion de medicom" class="media-preview">
                         </picture>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
     </main>
