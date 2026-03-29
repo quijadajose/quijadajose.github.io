@@ -50,9 +50,6 @@
     "project_lsv1_description": "LVSアプリケーションは、ヌエバ・エスパルタ州の表現を重視しながら、楽しく素早くベネズエラの手話を学ぶことを目的としています。",
     "project_medicom_title": "Medicom",
     "project_medicom_description": "Medicomは、保健センターでの医療記録を最適化し、記録の検索と登録を可能にするシンプルなアプリケーションです。",
-    "consent_banner_text": "ウェブサイトの使用状況を分析するためにMicrosoft Clarityを使用しています。追跡を許可しますか？",
-    "consent_banner_accept": "同意する",
-    "consent_banner_decline": "拒否する",
     "blog_filter_label": "技術でフィルター:",
     "blog_filter_all": "すべて",
     "blog_back": "戻る"

@@ -19,9 +19,24 @@
     href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
     onload="this.rel='stylesheet'" />
-  <noscript>
+    <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </noscript>
+  <!-- Sentry Configuration -->
+  <script>
+    window.sentryOnLoad = function () {
+      Sentry.init({
+        dsn: "https://64ba3d41c8f3250da9447c20131dd344@o4510999269670912.ingest.us.sentry.io/4511128891490304",
+        environment: document.URL.includes('localhost') ? 'development' : 'production',
+        tunnel: "https://sentry.quijadajosed.workers.dev/sentry-tunnel", 
+        sendDefaultPii: true,
+        tracesSampleRate: 1.0,
+        replaysSessionSampleRate: 0.1,
+        replaysOnErrorSampleRate: 1.0,
+      });
+    };
+  </script>
+  <script src="https://js.sentry-cdn.com/64ba3d41c8f3250da9447c20131dd344.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,7 +73,7 @@
       </article>
     </section>
   </main>
-  <div id="consent-banner" style="display:none"></div>
+
   <div id="media-modal"></div>
   <script src="matrix-rain.js" defer></script>
   <script type="module">

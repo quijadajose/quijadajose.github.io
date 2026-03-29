@@ -17,7 +17,6 @@ export async function loadLayout() {
   // Load components in parallel
   await Promise.all([
     loadComponent('header', 'components/header.html'),
-    loadComponent('#consent-banner', 'components/consent-banner.html'),
     loadComponent('#media-modal', 'components/modal.html')
   ]);
 }

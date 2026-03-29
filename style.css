@@ -476,42 +476,6 @@ a:hover {
   -webkit-mask-size: contain;
 }
 
-/* Consent Banner */
-#consent-banner {
-  color: var(--text-color);
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background: var(--matrix-black);
-  border: 1px solid var(--matrix-green);
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
-  padding: 20px;
-  border-radius: 4px;
-  z-index: 2000;
-}
-
-#consent-banner button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  border: 1px solid var(--matrix-green);
-  background: transparent;
-  color: var(--matrix-green);
-  cursor: pointer;
-  font-family: inherit;
-  text-transform: uppercase;
-  transition: all 0.3s;
-}
-
-#consent-banner button:hover {
-  background: var(--matrix-green);
-  color: var(--matrix-black);
-  box-shadow: 0 0 10px var(--matrix-green);
-}
-
-.accept-tracking {
-  font-weight: bold;
-}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
