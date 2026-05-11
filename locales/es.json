@@ -31,6 +31,8 @@
     "opensource_title": "Proyectos Open Source en Desarrollo",
     "opensource_lsv2_title": "App para aprender lenguaje de señas V2",
     "opensource_lsv2_description": "La aplicación busca enseñar el lenguaje de señas de manera divertida y rápida; ahora con soporte para múltiples idiomas y variantes regionales.",
+    "opensource_dpop_title": "Seguridad Avanzada con DPoP (RFC 9449)",
+    "opensource_dpop_description": "Implementación de referencia de DPoP para NestJS, diseñada para proteger tokens JWT contra robo y ataques de reutilización mediante vinculación criptográfica.",
     "see_on_github": "Ver en GitHub",
     "hobbies_title": "Hackatones, colaboraciones y más",
     "project_mathful_description": "Con este proyecto participe en la hackaton de midudev, permite resolver problemas matemáticos usando inteligencia artificial.",

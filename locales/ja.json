@@ -32,6 +32,8 @@
     "opensource_title": "開発中のオープンソースプロジェクト",
     "opensource_lsv2_title": "手話学習アプリ (LSV) V2",
     "opensource_lsv2_description": "アプリは、楽しく素早く手話を学べることを目指しており、現在は複数の言語と地域バリエーションに対応しています。",
+    "opensource_dpop_title": "NestJSにおけるDPoP (RFC 9449) を使用した高度なセキュリティ",
+    "opensource_dpop_description": "JWTトークンを盗難やリプレイ攻撃から保護するためのDPoPの完全なガイドと実装デモ。",
     "see_on_github": "GitHubで見る",
     "hobbies_title": "ハッカソン、コラボレーションなど",
     "project_mathful_description": "このプロジェクトで、Midudevのハッカソンに参加しました。人工知能を使用して数学の問題を解くことができます。",

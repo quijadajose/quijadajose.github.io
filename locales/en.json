@@ -31,6 +31,8 @@
     "opensource_title": "Open Source Projects in Development",
     "opensource_lsv2_title": "Sign Language Learning App (LSV) V2",
     "opensource_lsv2_description": "The application aims to teach sign language in a fun and fast way; now supporting multiple languages and regional variants.",
+    "opensource_dpop_title": "Advanced Security with DPoP (RFC 9449)",
+    "opensource_dpop_description": "A DPoP reference implementation for NestJS, designed to protect JWT tokens against theft and replay attacks via cryptographic binding.",
     "see_on_github": "See on GitHub",
     "hobbies_title": "Hackathons, collaborations, and more",
     "project_mathful_description": "With this project, I participated in Midudev's hackathon. It allows solving mathematical problems using artificial intelligence.",

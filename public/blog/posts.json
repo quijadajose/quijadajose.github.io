@@ -1,5 +1,32 @@
 [
   {
+    "slug": "nestjs-dpop-security-demo",
+    "image": "public/nestjs-dpop-security-demo/dpop-security.png",
+    "technologies": [
+      "NestJS",
+      "Docker",
+      "Redis",
+      "TypeScript",
+      "DPoP",
+      "OAuth 2.0"
+    ],
+    "title": {
+      "es": "Seguridad Avanzada con DPoP (RFC 9449) en NestJS",
+      "en": "Advanced Security with DPoP (RFC 9449) in NestJS",
+      "ja": "NestJSにおけるDPoP (RFC 9449) を使用した高度なセキュリティ"
+    },
+    "description": {
+      "es": "Guía completa y demostración de implementación de DPoP (Demonstrating Proof-of-Possession) para proteger tokens JWT contra robo y ataques de reutilización.",
+      "en": "Complete guide and implementation demo of DPoP (Demonstrating Proof-of-Possession) to protect JWT tokens against theft and replay attacks.",
+      "ja": "JWTトークンを盗難やリプレイ攻撃から保護するためのDPoP (Demonstrating Proof-of-Possession) の完全なガイドと実装デモ。"
+    },
+    "readmeUrl": {
+      "es": "https://raw.githubusercontent.com/quijadajose/nestjs-dpop-security-demo/main/README.md",
+      "en": "https://raw.githubusercontent.com/quijadajose/nestjs-dpop-security-demo/main/README_EN.md",
+      "ja": "https://raw.githubusercontent.com/quijadajose/nestjs-dpop-security-demo/main/README_EN.md"
+    }
+  },
+  {
     "slug": "sso-keycloak-docker",
     "image": "https://quijadajose.github.io/public/tests.mp4",
     "technologies": [
